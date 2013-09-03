@@ -1,0 +1,133 @@
+package littlebreadloaf.libraries;
+
+import cpw.mods.fml.common.registry.LanguageRegistry;
+
+public class Ids 
+{
+	public static int reiatsuID;
+	public static final int reiatsuID_Default = 20180;
+	
+	public static int reiatsuBlockID;
+	public static final int reiatsuBlockID_Default = 2181;
+	
+	public static int hollowBaitID;
+	public static final int hollowBaitID_Default = 2182;
+	
+	public static int zanpakutoID;
+	public static final int zanpakutoID_Default = 20181;
+	
+	public static int maskShardID;
+	public static final int maskShardID_Default = 20182;
+	
+	public static int soulClothID;
+	public static final int soulClothID_Default = 20183;
+	
+	
+
+	
+	public static int batHelmetID;
+	public static final int batHelmetID_Default = 20184;
+	
+	public static int blazeHelmetID;
+	public static final int blazeHelmetID_Default = 20185;
+	
+	public static int spiderHelmetID;
+	public static final int spiderHelmetID_Default = 20186;
+	
+	public static int golemHelmetID;
+	public static final int golemHelmetID_Default = 20187;
+	
+	public static int snakeHelmetID;
+	public static final int snakeHelmetID_Default = 20188;
+	
+	public static int waspHelmetID;
+	public static final int waspHelmetID_Default = 20189;
+	
+	public static int stalkerHelmetID;
+	public static final int stalkerHelmetID_Default = 20190;
+	
+	public static int menosHelmetID;
+	public static final int menosHelmetID_Default = 20191;
+	
+	public static int fisherHelmetID;
+	public static final int fisherHelmetID_Default = 20192;
+	
+	public static int hollowHelmetID;
+	public static final int hollowHelmetID_Default = 20193;
+	
+	
+	
+	
+	
+	public static int quincyBowID;
+	public static final int quincyBowID_Default = 20195;
+	
+	
+	
+	public static int shinirobeID;
+	public static final int shinirobeID_Default = 20196;
+	
+	public static int shinipantsID;
+	public static final int shinipantsID_Default = 20197;
+	
+	public static int sandalsID;
+	public static final int sandalsID_Default = 20198;
+	
+	public static int quincyrobeID;
+	public static final int quincyrobeID_Default = 20200;
+	
+	public static int quincypantsID;
+	public static final int quincypantsID_Default = 20201;
+	
+	public static int quincyshoesID;
+	public static final int quincyshoesID_Default = 20202;
+	
+	public static int seeleschneiderID;
+	public static final int seeleschneiderID_Default = 20203;
+	
+
+	public static int customSpawnerID;
+	public static final int customSpawnerID_Default = 20300;
+	
+	
+	
+	
+	
+	
+	public static int shikaifireID;
+	public static final int shikaifireID_Default = 20400;
+	
+	public static int shikaiiceID;
+	public static final int shikaiiceID_Default = 20401;
+	
+	public static int shikaihealID;
+	public static final int shikaihealID_Default = 20402;
+	
+	public static int shikaipoisonID;
+	public static final int shikaipoisonID_Default = 20403;
+	
+	public static int shikaiearthID;
+	public static final int shikaiearthID_Default = 20404;
+	
+	public static int shikaiwindID;
+	public static final int shikaiwindID_Default = 20405;
+	
+	public static int shikailightID;
+	public static final int shikailightID_Default = 20406;
+	
+	public static int shikaidarkID;
+	public static final int shikaidarkID_Default = 20407;
+	
+	public static int shikailightningID;
+	public static final int shikailightningID_Default = 20408;
+	
+	public static int shikailunarID;
+	public static final int shikailunarID_Default = 20409;
+	
+	public static int shikaiwaterID;
+	public static final int shikaiwaterID_Default = 20410;
+	
+	public static int shikainormalID;
+	public static final int shikainormalID_Default = 20411;
+
+}
