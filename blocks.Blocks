@@ -1,0 +1,29 @@
+package littlebreadloaf.blocks;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import littlebreadloaf.libraries.Ids;
+import littlebreadloaf.libraries.Names;
+
+public class Blocks 
+{
+	public static Block reiatsuBlock;
+	public static Block hollowBait;
+
+	public static void init() 
+	{
+		reiatsuBlock = new BlockReiatsu(Ids.reiatsuBlockID);
+		GameRegistry.registerBlock(reiatsuBlock, Names.ReiatsuBlock_Name);
+		
+		hollowBait = new BlockHollowBait(Ids.hollowBaitID);
+		GameRegistry.registerBlock(hollowBait, Names.HollowBait_Name);
+	}
+
+	public static void addNames() 
+	{
+		LanguageRegistry.addName(reiatsuBlock, Names.ReiatsuBlock_Name);
+		LanguageRegistry.addName(hollowBait, Names.HollowBait_Name);
+	}
+}
