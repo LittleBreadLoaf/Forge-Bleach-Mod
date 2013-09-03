@@ -13,6 +13,34 @@ public class Ids
 	public static int hollowBaitID;
 	public static final int hollowBaitID_Default = 2182;
 	
+	public static int maskOreID;
+	public static final int maskOreID_Default = 2183;
+	
+	public static int purpleGooID;
+	public static final int purpleGooID_Default = 2184;
+	
+	public static int reiatsuOreID;
+	public static final int reiatsuOreID_Default = 2185;
+	
+	public static int sekkisekiID;
+	public static final int sekkisekiID_Default = 2186;
+	
+	public static int soulQuartzOreID;
+	public static final int soulQuartzOreID_Default = 2187;
+	
+	public static int soulQuartzBlockID;
+	public static final int soulQuartzBlockID_Default = 2188;
+	
+	public static int soulQuartzLampID;
+	public static final int soulQuartzLampID_Default = 2189;
+	
+	public static int whitesandID;
+	public static final int whitesandID_Default = 2190;
+	
+	
+	
+	
+	
 	public static int zanpakutoID;
 	public static final int zanpakutoID_Default = 20181;
 	
@@ -22,38 +50,43 @@ public class Ids
 	public static int soulClothID;
 	public static final int soulClothID_Default = 20183;
 	
+	public static int soulQuartzID;
+	public static final int soulQuartzID_Default = 20184;
+	
+	
+	
 	
 
 	
 	public static int batHelmetID;
-	public static final int batHelmetID_Default = 20184;
+	public static final int batHelmetID_Default = 20185;
 	
 	public static int blazeHelmetID;
-	public static final int blazeHelmetID_Default = 20185;
+	public static final int blazeHelmetID_Default = 20186;
 	
 	public static int spiderHelmetID;
-	public static final int spiderHelmetID_Default = 20186;
+	public static final int spiderHelmetID_Default = 20187;
 	
 	public static int golemHelmetID;
-	public static final int golemHelmetID_Default = 20187;
+	public static final int golemHelmetID_Default = 20188;
 	
 	public static int snakeHelmetID;
-	public static final int snakeHelmetID_Default = 20188;
+	public static final int snakeHelmetID_Default = 20189;
 	
 	public static int waspHelmetID;
-	public static final int waspHelmetID_Default = 20189;
+	public static final int waspHelmetID_Default = 20190;
 	
 	public static int stalkerHelmetID;
-	public static final int stalkerHelmetID_Default = 20190;
+	public static final int stalkerHelmetID_Default = 20191;
 	
 	public static int menosHelmetID;
-	public static final int menosHelmetID_Default = 20191;
+	public static final int menosHelmetID_Default = 20192;
 	
 	public static int fisherHelmetID;
-	public static final int fisherHelmetID_Default = 20192;
+	public static final int fisherHelmetID_Default = 20193;
 	
 	public static int hollowHelmetID;
-	public static final int hollowHelmetID_Default = 20193;
+	public static final int hollowHelmetID_Default = 20194;
 	
 	
 	
