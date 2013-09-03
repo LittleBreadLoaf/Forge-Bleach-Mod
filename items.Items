@@ -32,6 +32,7 @@ public class Items
 	public static Item menosmask;
 	public static Item fishermask;
 	public static Item seele;
+	public static Item soulquartz;
 	
 	public static Item shikaifire;
 	public static Item shikaiice;
@@ -50,7 +51,7 @@ public class Items
 	
 	public static void init()
 	{
-		reiatsu = new Reiatsu(Ids.reiatsuID);
+		reiatsu = new ItemReiatsu(Ids.reiatsuID);
 		quincybow = new ItemQuincyBow(Ids.quincyBowID);
 		zanpakuto = new ItemZanpakuto(Ids.zanpakutoID, Tools.SOUL);
 		maskshard = new ItemMaskShard(Ids.maskShardID);
@@ -58,6 +59,7 @@ public class Items
 		menosmask = new ItemMenosMask(Ids.menosHelmetID);
 		fishermask = new ItemFisherMask(Ids.fisherHelmetID);
 		seele = new ItemSeeleschneider(Ids.seeleschneiderID, Tools.SOUL);
+		soulquartz = new ItemSoulQuartz(Ids.soulQuartzID);
 		shikaifire = new ShikaiFire(Ids.shikaifireID, Tools.SHIKAI);
 		shikaiice = new ShikaiIce(Ids.shikaiiceID, Tools.SHIKAI);
 		shikaiheal = new ShikaiHeal(Ids.shikaihealID, Tools.SHIKAI);
@@ -82,6 +84,7 @@ public class Items
 		LanguageRegistry.addName(soulcloth, Names.SoulCloth_Name);
 		LanguageRegistry.addName(menosmask, Names.MenosHelmet_Name);
 		LanguageRegistry.addName(fishermask, Names.FisherHelmet_Name);
+		LanguageRegistry.addName(soulquartz, Names.SoulQuartz_Name);
 		for(int i = 0; i < Names.Seeleschneider_Name.length; i++)
 		{
 			LanguageRegistry.addName(new ItemStack(seele, 1, i), Names.Seeleschneider_Name[i]);
