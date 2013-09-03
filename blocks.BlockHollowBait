@@ -34,7 +34,7 @@ public class BlockHollowBait extends Block
 
     protected Random rand;
     public int posX;
-    public int posY; 
+    public int posY;
     public int posZ;
     public boolean activated;
     public int baitTimer;
@@ -133,7 +133,7 @@ public class BlockHollowBait extends Block
     public void registerIcons(IconRegister par1IconRegister)
     {
         this.blockIcon = par1IconRegister.registerIcon(BleachModInfo.ID.toLowerCase() + ":" + Names.HollowBait_UnlocalizedName + "2");
-        this.field_94382_c = par1IconRegister.registerIcon(this.func_111023_E() + "_inner");
+        this.field_94382_c = par1IconRegister.registerIcon("cake_inner");
         this.cakeTopIcon = par1IconRegister.registerIcon(BleachModInfo.ID.toLowerCase() + ":" + Names.HollowBait_UnlocalizedName + "1");
         this.cakeBottomIcon = par1IconRegister.registerIcon(BleachModInfo.ID.toLowerCase() + ":" + Names.HollowBait_UnlocalizedName + "2");
     }
