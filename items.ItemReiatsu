@@ -47,11 +47,9 @@ public class ItemReiatsu extends Item
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
 
-		ExtendedPlayer props = (ExtendedPlayer) par3EntityPlayer.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME);
-		if(props.getCurrentEnergy() < 1 && !par3EntityPlayer.worldObj.isRemote)
-		{
-	    	par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
-		}
+		
+		par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
+		
         return par1ItemStack;
     }
 	
@@ -61,13 +59,11 @@ public class ItemReiatsu extends Item
 	{
 		if (!world.isRemote)
 		{
-
 			ExtendedPlayer props = (ExtendedPlayer) player.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME);
-			if(props.replenishEnergy(10))
-			{
-				--itemstack.stackSize;
-				world.playSoundAtEntity(player, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F); 
-			}
+			--itemstack.stackSize;
+			props.replenishEnergy(10);
+			world.playSoundAtEntity(player, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F); 
+			
 		}
 		return itemstack;
 	}
