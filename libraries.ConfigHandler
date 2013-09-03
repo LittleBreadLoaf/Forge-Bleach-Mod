@@ -16,6 +16,24 @@ public class ConfigHandler
 		
 		Ids.hollowBaitID = config.get(config.CATEGORY_BLOCK, "Hollow Bait ID", Ids.hollowBaitID_Default).getInt();
 		
+		Ids.maskOreID = config.get(config.CATEGORY_BLOCK, "Mask Ore ID", Ids.maskOreID_Default).getInt();
+		
+		Ids.purpleGooID = config.get(config.CATEGORY_BLOCK, "Purple Goo ID", Ids.purpleGooID_Default).getInt();
+		
+		Ids.sekkisekiID = config.get(config.CATEGORY_BLOCK, "Sekkiseki ID", Ids.sekkisekiID_Default).getInt();
+		
+		Ids.soulQuartzOreID = config.get(config.CATEGORY_BLOCK, "Soul Quartz Ore ID", Ids.soulQuartzOreID_Default).getInt();
+		
+		Ids.soulQuartzBlockID = config.get(config.CATEGORY_BLOCK, "Soul Quartz Block ID", Ids.soulQuartzBlockID_Default).getInt();
+		
+		Ids.soulQuartzLampID = config.get(config.CATEGORY_BLOCK, "Soul Quartz Lamp ID", Ids.soulQuartzLampID_Default).getInt();
+		
+		Ids.whitesandID = config.get(config.CATEGORY_BLOCK, "White Sand ID", Ids.whitesandID_Default).getInt();
+		
+		
+		
+		
+		
 		Ids.reiatsuID = config.get(config.CATEGORY_ITEM, "Reiatsu ID", Ids.reiatsuID_Default).getInt();
 		
 		Ids.zanpakutoID = config.get(config.CATEGORY_ITEM, "Zanpakuto ID", Ids.zanpakutoID_Default).getInt();
@@ -23,6 +41,8 @@ public class ConfigHandler
 		Ids.maskShardID = config.get(config.CATEGORY_ITEM, "Mask Shard ID", Ids.maskShardID_Default).getInt();
 		
 		Ids.soulClothID = config.get(config.CATEGORY_ITEM, "Soul Cloth ID", Ids.soulClothID_Default).getInt();
+		
+		Ids.soulQuartzID = config.get(config.CATEGORY_ITEM, "Soul Quartz ID", Ids.soulQuartzID_Default).getInt();
 		
 		
 		
