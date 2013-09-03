@@ -11,6 +11,32 @@ public class Names
 	public static final String HollowBait_UnlocalizedName = "hollow_bait";
 	public static final String HollowBait_Name = "Hollow Bait";
 	
+	public static final String MaskOre_UnlocalizedName = "mask_ore";
+	public static final String MaskOre_Name = "Mask Ore";
+	
+	public static final String PurpleGoo_UnlocalizedName = "purple_goo";
+	public static final String PurpleGoo_Name = "Precipice Plasma";
+	
+	public static final String ReiatsuOre_UnlocalizedName = "reiatsu_ore";
+	public static final String ReiatsuOre_Name = "Reiatsu Ore";
+	
+	public static final String Sekkiseki_UnlocalizedName = "sekkiseki";
+	public static final String Sekkiseki_Name = "Sekkiseki";
+	
+	public static final String SoulQuartzOre_UnlocalizedName = "soul_quartz_ore";
+	public static final String SoulQuartzOre_Name = "Soul Quartz Ore";
+	
+	public static final String SoulQuartzBlock_UnlocalizedName = "soul_quartz_block";
+	public static final String SoulQuartzBlock_Name = "Soul Quartz Block";
+	
+	public static final String SoulQuartzLamp_UnlocalizedName = "soul_quartz_lamp";
+	public static final String SoulQuartzLamp_Name = "Soul Quartz Lamp";
+	
+	public static final String WhiteSand_UnlocalizedName = "white_sand";
+	public static final String WhiteSand_Name = "White Sand";
+	
+	
+	
 	public static final String Zanpakuto_UnlocalizedName = "zanpakuto";
 	public static final String Zanpakuto_Name = "Zanpakuto";
 	
@@ -19,6 +45,9 @@ public class Names
 	
 	public static final String SoulCloth_UnlocalizedName = "soulcloth";
 	public static final String SoulCloth_Name = "Soul Cloth";
+	
+	public static final String SoulQuartz_UnlocalizedName = "soul_quartz";
+	public static final String SoulQuartz_Name = "Soul Quartz";
 	
 	
 	
