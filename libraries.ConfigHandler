@@ -20,6 +20,8 @@ public class ConfigHandler
 		
 		Ids.purpleGooID = config.get(config.CATEGORY_BLOCK, "Purple Goo ID", Ids.purpleGooID_Default).getInt();
 		
+		Ids.reiatsuOreID = config.get(config.CATEGORY_BLOCK, "Reiatsu Ore ID", Ids.reiatsuOreID_Default).getInt();
+		
 		Ids.sekkisekiID = config.get(config.CATEGORY_BLOCK, "Sekkiseki ID", Ids.sekkisekiID_Default).getInt();
 		
 		Ids.soulQuartzOreID = config.get(config.CATEGORY_BLOCK, "Soul Quartz Ore ID", Ids.soulQuartzOreID_Default).getInt();
@@ -43,6 +45,9 @@ public class ConfigHandler
 		Ids.soulClothID = config.get(config.CATEGORY_ITEM, "Soul Cloth ID", Ids.soulClothID_Default).getInt();
 		
 		Ids.soulQuartzID = config.get(config.CATEGORY_ITEM, "Soul Quartz ID", Ids.soulQuartzID_Default).getInt();
+		
+		Ids.soulrockID = config.get(config.CATEGORY_BLOCK, "Soul Stone ID", Ids.soulrockID_Default).getInt();
+				
 		
 		
 		
