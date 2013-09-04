@@ -46,7 +46,6 @@ public class ConfigHandler
 		
 		Ids.soulQuartzID = config.get(config.CATEGORY_ITEM, "Soul Quartz ID", Ids.soulQuartzID_Default).getInt();
 		
-		Ids.soulrockID = config.get(config.CATEGORY_BLOCK, "Soul Stone ID", Ids.soulrockID_Default).getInt();
 				
 		
 		
