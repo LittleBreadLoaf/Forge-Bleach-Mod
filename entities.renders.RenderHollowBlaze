@@ -10,7 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderHollowBlaze extends RenderLiving
 {
-	private static final ResourceLocation texture = new ResourceLocation("lblbm:textures/models/mobs/hollow_blaze.png");
+	private static final ResourceLocation texture1 = new ResourceLocation("lblbm:textures/models/mobs/hollow_blaze.png");
+	private static final ResourceLocation texture2 = new ResourceLocation("lblbm:textures/models/mobs/hollow_blaze2.png");
+	private static final ResourceLocation texture3 = new ResourceLocation("lblbm:textures/models/mobs/hollow_blaze3.png");
 	protected ModelHollowBlaze model;
 
 	public RenderHollowBlaze(ModelBase par1ModelBase, float par2) 
@@ -37,11 +39,21 @@ public class RenderHollowBlaze extends RenderLiving
 
 	
 
-	@Override
 	protected ResourceLocation func_110775_a(Entity entity) 
 	{
-		return texture;
+		switch (((EntityHollowBlaze) entity).getTexture())
+        {
+		case 0:
+			return texture2;
+		case 1:
+			return texture3;
+			default:
+				return texture1;
+		
+        }
 	}
+
+	
 
 
 
