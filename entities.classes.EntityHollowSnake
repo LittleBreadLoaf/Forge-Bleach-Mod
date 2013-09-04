@@ -1,5 +1,7 @@
 package littlebreadloaf.entities.classes;
 
+import java.util.Random;
+
 import littlebreadloaf.armor.Armor;
 import littlebreadloaf.events.ExtendedPlayer;
 import littlebreadloaf.items.Items;
@@ -21,6 +23,7 @@ import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
@@ -28,10 +31,15 @@ import net.minecraft.world.World;
 
 public class EntityHollowSnake extends EntityMob
 {
-
-	public EntityHollowSnake(World par1World) 
+	private static Random rand = new Random();
+	public EntityHollowSnake(World par1)
+	{
+		this(par1, rand.nextInt(3));
+	}
+	public EntityHollowSnake(World par1World, int par2) 
 	{
 		super(par1World);
+		this.setTexture(par2);
 		   this.tasks.addTask(0, new EntityAISwimming(this));
 	        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityPlayer.class, 0.4D, false));
 	        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityWhole.class, 0.4D, false));
@@ -45,6 +53,7 @@ public class EntityHollowSnake extends EntityMob
 	        this.targetTasks.addTask(0, new EntityAIHurtByTarget(this, false));
 	        this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
 	        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityWhole.class, 0, false));
+	        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityShinigami.class, 0, false));
 	        this.isImmuneToFire = true;
 	        this.experienceValue = 15;
 		
@@ -196,7 +205,7 @@ public class EntityHollowSnake extends EntityMob
         if (par1DamageSource.getEntity() instanceof EntityPlayer)
         {
     		ExtendedPlayer props = (ExtendedPlayer) this.attackingPlayer.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME);
-        	if(this.attackingPlayer.inventory.getCurrentItem().itemID == Items.zanpakuto.itemID && props.getZTotal() < 80)
+        	if(this.attackingPlayer.inventory.getCurrentItem() != null && this.attackingPlayer.inventory.getCurrentItem().itemID == Items.zanpakuto.itemID && props.getZTotal() < 80)
         	{
         		props.addPoints(4, 1);
         	}
@@ -204,5 +213,37 @@ public class EntityHollowSnake extends EntityMob
         }
     }
 	
-	
+    public void setTexture(int par1)
+    {
+    	this.dataWatcher.updateObject(19, Integer.valueOf(par1));
+    }
+    public int getTexture()
+    {
+        return this.dataWatcher.getWatchableObjectInt(19);
+    }
+
+    protected void entityInit()
+    {
+        super.entityInit();
+        this.dataWatcher.addObject(19, Integer.valueOf(0));
+    }
+    
+    
+    
+    /**
+     * (abstract) Protected helper method to write subclass entity data to NBT.
+     */
+    public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
+    {
+        super.writeEntityToNBT(par1NBTTagCompound);
+        par1NBTTagCompound.setInteger("Texture", this.getTexture());
+    }
+    /**
+     * (abstract) Protected helper method to read subclass entity data from NBT.
+     */
+    public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
+    {
+        super.readEntityFromNBT(par1NBTTagCompound);
+        this.setTexture(par1NBTTagCompound.getInteger("Texture"));
+    }
 }
