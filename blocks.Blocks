@@ -19,7 +19,6 @@ public class Blocks
 	public static Block soulQuartzBlock;
 	public static Block soulQuartzLamp;
 	public static Block whitesand;
-	public static Block soulrock;
 
 	public static void init() 
 	{
@@ -52,9 +51,6 @@ public class Blocks
 		
 		whitesand = new BlockWhiteSand(Ids.whitesandID);
 		GameRegistry.registerBlock(whitesand, Names.WhiteSand_Name);
-		
-		soulrock = new BlockSoulRock(Ids.soulrockID);
-		GameRegistry.registerBlock(soulrock, Names.SoulRock_Name);
 	}
 
 	public static void addNames() 
@@ -69,6 +65,5 @@ public class Blocks
 		LanguageRegistry.addName(soulQuartzBlock, Names.SoulQuartzBlock_Name);
 		LanguageRegistry.addName(soulQuartzLamp, Names.SoulQuartzLamp_Name);
 		LanguageRegistry.addName(whitesand, Names.WhiteSand_Name);
-		LanguageRegistry.addName(soulrock, Names.SoulRock_Name);
 	}
 }
