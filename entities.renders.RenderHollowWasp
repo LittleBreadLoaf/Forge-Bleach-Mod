@@ -1,5 +1,6 @@
 package littlebreadloaf.entities.renders;
 
+import littlebreadloaf.entities.classes.EntityHollowBat;
 import littlebreadloaf.entities.classes.EntityHollowWasp;
 import littlebreadloaf.entities.models.ModelHollowWasp;
 import net.minecraft.client.model.ModelBase;
@@ -10,7 +11,10 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderHollowWasp extends RenderLiving
 {
-	private static final ResourceLocation texture = new ResourceLocation("lblbm:textures/models/mobs/hollow_wasp.png");
+	private static final ResourceLocation texture1 = new ResourceLocation("lblbm:textures/models/mobs/hollow_wasp.png");
+	private static final ResourceLocation texture2 = new ResourceLocation("lblbm:textures/models/mobs/hollow_wasp2.png");
+	private static final ResourceLocation texture3 = new ResourceLocation("lblbm:textures/models/mobs/hollow_wasp3.png");
+	private static final ResourceLocation texture4 = new ResourceLocation("lblbm:textures/models/mobs/hollow_wasp4.png");
 	protected ModelHollowWasp model;
 
 	public RenderHollowWasp(ModelBase par1ModelBase, float par2) 
@@ -36,11 +40,20 @@ public class RenderHollowWasp extends RenderLiving
 	}
 
 	
-
-	@Override
 	protected ResourceLocation func_110775_a(Entity entity) 
 	{
-		return texture;
+		switch (((EntityHollowWasp) entity).getTexture())
+        {
+		case 0:
+			return texture2;
+		case 1:
+			return texture3;
+		case 2:
+			return texture4;
+			default:
+				return texture1;
+		
+        }
 	}
 
 
