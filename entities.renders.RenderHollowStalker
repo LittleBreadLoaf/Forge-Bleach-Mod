@@ -1,5 +1,6 @@
 package littlebreadloaf.entities.renders;
 
+import littlebreadloaf.entities.classes.EntityHollowBat;
 import littlebreadloaf.entities.classes.EntityHollowStalker;
 import littlebreadloaf.entities.models.ModelHollowStalker;
 import net.minecraft.client.model.ModelBase;
@@ -10,7 +11,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderHollowStalker extends RenderLiving
 {
-	private static final ResourceLocation texture = new ResourceLocation("lblbm:textures/models/mobs/hollow_stalker.png");
+	private static final ResourceLocation texture1 = new ResourceLocation("lblbm:textures/models/mobs/hollow_stalker.png");
+	private static final ResourceLocation texture2 = new ResourceLocation("lblbm:textures/models/mobs/hollow_stalker2.png");
+	private static final ResourceLocation texture3 = new ResourceLocation("lblbm:textures/models/mobs/hollow_stalker3.png");
 	protected ModelHollowStalker model;
 
 	public RenderHollowStalker(ModelBase par1ModelBase, float par2) 
@@ -36,11 +39,18 @@ public class RenderHollowStalker extends RenderLiving
 	}
 
 	
-
-	@Override
 	protected ResourceLocation func_110775_a(Entity entity) 
 	{
-		return texture;
+		switch (((EntityHollowStalker) entity).getTexture())
+        {
+		case 0:
+			return texture2;
+		case 1:
+			return texture3;
+			default:
+				return texture1;
+		
+        }
 	}
 
 
