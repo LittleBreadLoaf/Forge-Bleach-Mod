@@ -58,7 +58,7 @@ public class EntityHollowStalker extends EntityMob
 	        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityShinigami.class, 0, false));
 	        this.isImmuneToFire = true;
 	        this.experienceValue = 15;
-	        this.setSize(1.0F, 3.2F);
+	        this.setSize(0.7F, 3.2F);
 		
 		
 	}
