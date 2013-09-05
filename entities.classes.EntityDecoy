@@ -40,7 +40,6 @@ public class EntityDecoy extends EntityMob
         this.tasks.addTask(4, new EntityAILookIdle(this));
         this.tasks.addTask(12, new EntityAILookIdle(this));
         this.tasks.addTask(13, new EntityAIWander(this, var3));
-        this.isImmuneToFire = true;
     }
 
     /**
