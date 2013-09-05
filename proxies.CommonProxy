@@ -17,6 +17,8 @@ import cpw.mods.fml.relauncher.Side;
 
 public class CommonProxy implements IGuiHandler
 {
+
+	
 	private static HashMap<String, NBTTagCompound> extendedEntityData = new HashMap<String, NBTTagCompound>();
 	
 	public void initRenderers()
@@ -28,6 +30,11 @@ public class CommonProxy implements IGuiHandler
 	{
 		TickRegistry.registerTickHandler(new ServerTickHandler(), Side.SERVER);
 		
+	}
+	
+	public int addArmor(String string)
+	{
+		return 0;
 	}
 	
 	@Override
@@ -68,6 +75,11 @@ public class CommonProxy implements IGuiHandler
 
 		Armor.init();
 		Armor.addNames();
+	}
+	
+	public void loadGUI()
+	{
+		
 	}
 
 }
