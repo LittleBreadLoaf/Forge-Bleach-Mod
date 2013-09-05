@@ -261,6 +261,7 @@ public class ItemZanpakuto extends Item
         return par1ItemStack;
     }
     
+    @SideOnly(Side.CLIENT)
     public void onUsingItemTick(ItemStack stack, EntityPlayer player, int count)
     {
     	double var2 = player.posX;
@@ -273,10 +274,7 @@ public class ItemZanpakuto extends Item
         {
             ParticleEffects.spawnParticle("spirit", var2 - 0.9, var3 + 1, var4 + 0.5, 0.0D, 0.0D, 0.0D);
             ParticleEffects.spawnParticle("spirit", var2 - 0.9, var3 + 1, var4 + 0.5, 0.0D, 0.0D, 0.0D);
-        	
         }
-        player.motionX = 0;
-        player.motionZ = 0;
         
     }
 
@@ -349,7 +347,7 @@ public class ItemZanpakuto extends Item
                 	{
                 		props.setTexture(5);
                 	}
-                	else if(props.getZType() == 2 && props.getZName().equalsIgnoreCase("zenhansha"))
+                	else if(props.getZType() == 2 && props.getZName().equalsIgnoreCase("ice cream"))
                 	{
                 		props.setTexture(5);
                 	}
@@ -393,14 +391,31 @@ public class ItemZanpakuto extends Item
                 	
                 	
                 	
-                	else if(par3EntityPlayer.getEntityName().equalsIgnoreCase("_jad3n") && props.getZType() == 6 && props.getZName().equalsIgnoreCase("undulatis"))
+                	else if(par3EntityPlayer.username.equalsIgnoreCase("_jad3n") && props.getZName().equals("Undulatis"))
                 	{
+                		props.setType(6);
                 		props.setTexture(6);
                 	}
-                	else if(par3EntityPlayer.getEntityName().equalsIgnoreCase("thecodymaverick") && props.getZType() == 11 && props.getZName().equalsIgnoreCase("hi-yari"))
+                	else if(par3EntityPlayer.username.equalsIgnoreCase("thecodymaverick") && props.getZName().equals("Hi-Yari"))
                 	{
+                		props.setType(11);
                 		props.setTexture(6);
                 	}
+                	else if(par3EntityPlayer.username.equalsIgnoreCase("JoeTheAntiPro")&& props.getZName().equals("Zenhansha"))
+	            	{
+                		props.setType(2);
+	            		props.setTexture(6);
+	            	}
+                	else if(par3EntityPlayer.username.equalsIgnoreCase("theagirl") && props.getZName().equals("Setsuna"))
+	            	{
+                		props.setType(0);
+	            		props.setTexture(6);
+	            	}
+                	else if(par3EntityPlayer.username.equalsIgnoreCase("jrich144") &&  props.getZName().equals("Kage Kishi"))
+	            	{
+                		props.setType(8);
+	            		props.setTexture(6);
+	            	}
                 	
                     
                 	
@@ -455,8 +470,13 @@ public class ItemZanpakuto extends Item
  	            		}
  	            		if(props.getZTex() == 5)
  	            		{
- 	            			par3EntityPlayer.addChatMessage("Even the odds and conquer," + " " + par1ItemStack.getDisplayName() + "!");
+ 	            			par3EntityPlayer.addChatMessage("Scream," + " " + par1ItemStack.getDisplayName() + "!");
  	            		}
+ 	            		if(props.getZTex() == 6)
+ 	            		{
+ 	 	            		par3EntityPlayer.addChatMessage("Even the odds and conquer," + " " + par1ItemStack.getDisplayName() + "!");
+ 	            		}
+ 	            		
  	        		}
                 	 
                 	 else if(props.getZType() == 3)
@@ -619,6 +639,10 @@ public class ItemZanpakuto extends Item
     	            		{
     	            			par3EntityPlayer.addChatMessage("I will show you the greatest nightmare!");
     	            		}
+    	            		if(props.getZTex() == 6)
+    	            		{
+    	            			par3EntityPlayer.addChatMessage("Lurk in the shadows, Kage Kishi!");
+    	            		}
     	        		}
                 	 
                 	 else if(props.getZType() == 9)
@@ -731,6 +755,10 @@ public class ItemZanpakuto extends Item
     	            		{
     	            			par3EntityPlayer.addChatMessage("Draw," + " " + par1ItemStack.getDisplayName() + "!");
     	            		}
+    	            		if(props.getZTex() == 6)
+       	            		{
+       	            			par3EntityPlayer.addChatMessage("Setsuna!");
+       	            		}
     	        		}
                 }
 
