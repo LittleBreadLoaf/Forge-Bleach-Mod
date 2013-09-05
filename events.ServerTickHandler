@@ -67,7 +67,15 @@ public class ServerTickHandler implements ITickHandler
 					props.consumeEnergy(1);
 				}
 			}
-			
+			if(helmet.getItem() == Armor.StalkerHelmet)
+			{
+				player.addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 40, 0));
+				if(depleteTimer <= 0)
+				{
+					depleteTimer = 40;
+					props.consumeEnergy(1);
+				}
+			}
 			if(helmet.getItem() == Armor.HollowHelmet)
 			{
 				player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 40, 1));
