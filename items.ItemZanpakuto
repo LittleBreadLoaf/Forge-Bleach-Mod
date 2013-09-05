@@ -162,12 +162,14 @@ public class ItemZanpakuto extends Item
     	
     	if(var7 != null && var7.itemID == Armor.WaspHelmet.itemID)
     	{
-    		if(!player.worldObj.isRemote && props.replenishEnergy(1))
+    		if(!player.worldObj.isRemote)
     		{
-    			this.waspboost = 0.1F;
+    			props.replenishEnergy(1);
     		}
     		
     	}
+    	
+    	
         
         if(par2EntityLivingBase.getCreatureAttribute() == Tools.SPIRIT)
         {
