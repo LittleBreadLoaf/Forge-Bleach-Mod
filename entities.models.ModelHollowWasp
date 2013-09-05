@@ -1,5 +1,4 @@
 
-
 package littlebreadloaf.entities.models;
 
 import net.minecraft.client.model.ModelBase;
