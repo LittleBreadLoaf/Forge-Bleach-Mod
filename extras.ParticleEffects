@@ -8,7 +8,7 @@ public class ParticleEffects
     private static Minecraft mc = Minecraft.getMinecraft();
     private static World theWorld = mc.theWorld;
     private static boolean red = true;
-
+@SideOnly(Side.CLIENT)
     public static EntityFX spawnParticle(String var0, double var1, double var3, double var5, double var7, double var9, double var11)
     {
         if (mc != null && mc.renderViewEntity != null && mc.effectRenderer != null)
