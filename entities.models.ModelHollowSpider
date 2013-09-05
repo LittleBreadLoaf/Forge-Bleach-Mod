@@ -1,157 +1,281 @@
-package littlebreadloaf.entities.models;
+package littlebreadloaf.entities.classes;
 
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.client.model.ModelRenderer;
+import java.util.Random;
+
+import littlebreadloaf.armor.Armor;
+import littlebreadloaf.events.ExtendedPlayer;
+import littlebreadloaf.items.Items;
+import littlebreadloaf.libraries.Tools;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIAvoidEntity;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
+import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
+import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.EntityIronGolem;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.world.World;
 
-@SideOnly(Side.CLIENT)
-public class ModelHollowSpider extends ModelBase
+public class EntityHollowSpider extends EntityMob
 {
-    /** The spider's head box */
-    public ModelRenderer spiderHead;
+	private static Random rand = new Random();
+	public EntityHollowSpider(World par1)
+	{
+		this(par1, rand.nextInt(3));
+	}
+	public EntityHollowSpider(World par1World, int par2) 
+	{
+		super(par1World);
+		this.setTexture(par2);
+		   this.tasks.addTask(0, new EntityAISwimming(this));
+	        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityPlayer.class, 0.4D, false));
+	        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityWhole.class, 0.4D, false));
+	        this.tasks.addTask(3, new EntityAIAttackOnCollide(this, EntityShinigami.class, 0.4D, false));
+	        this.tasks.addTask(4, new EntityAIAvoidEntity(this, EntityIronGolem.class, 6.0F, 0.3F, 0.3F));
+	        this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 0.4D));
+	        this.tasks.addTask(6, new EntityAIWander(this, 0.4D));
+	        this.tasks.addTask(7, new EntityAILookIdle(this));
+	        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+	        this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityWhole.class, 8.0F));
+	        this.targetTasks.addTask(0, new EntityAIHurtByTarget(this, false));
+	        this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
+	        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityWhole.class, 0, false));
+	        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityShinigami.class, 0, false));
+	        this.experienceValue = 15;
+		
+		
+	}
+	
+	protected boolean isAIEnabled()
+	{
+		return true;
+		
+	}
+	
+	public int getTotalArmorValue()
+	{
+		return 4;
+	}
+	
 
-    /** The spider's neck box */
-    public ModelRenderer spiderNeck;
-
-    /** The spider's body box */
-    public ModelRenderer spiderBody;
-
-    /** Spider's first leg */
-    public ModelRenderer spiderLeg1;
-
-    /** Spider's second leg */
-    public ModelRenderer spiderLeg2;
-
-    /** Spider's third leg */
-    public ModelRenderer spiderLeg3;
-
-    /** Spider's fourth leg */
-    public ModelRenderer spiderLeg4;
-
-    /** Spider's fifth leg */
-    public ModelRenderer spiderLeg5;
-
-    /** Spider's sixth leg */
-    public ModelRenderer spiderLeg6;
-
-    /** Spider's seventh leg */
-    public ModelRenderer spiderLeg7;
-
-    /** Spider's eight leg */
-    public ModelRenderer spiderLeg8;
-
-    public ModelHollowSpider()
+	protected void func_110147_ax()
+	{
+		super.func_110147_ax();
+		if(this.worldObj.difficultySetting >= 1)
+		{
+			this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(70.0D);
+			
+			this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(6.0D);
+		}
+		else
+		{
+			this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(50.0D);
+			
+			this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(4.0D);
+		}
+	
+	}
+	
+	public EnumCreatureAttribute getCreatureAttribute()
+	{
+		return Tools.SPIRIT;
+	}
+	
+	  /**
+     * Returns the sound this mob makes when it is hurt.
+     */
+    protected String getHurtSound()
     {
-        float f = 0.0F;
-        byte b0 = 15;
-        this.spiderHead = new ModelRenderer(this, 32, 4);
-        this.spiderHead.addBox(-4.0F, -4.0F, -8.0F, 8, 8, 8, f);
-        this.spiderHead.setRotationPoint(0.0F, (float)b0, -3.0F);
-        this.spiderNeck = new ModelRenderer(this, 0, 0);
-        this.spiderNeck.addBox(-3.0F, -3.0F, -3.0F, 6, 6, 6, f);
-        this.spiderNeck.setRotationPoint(0.0F, (float)b0, 0.0F);
-        this.spiderBody = new ModelRenderer(this, 0, 12);
-        this.spiderBody.addBox(-5.0F, -4.0F, -6.0F, 10, 8, 12, f);
-        this.spiderBody.setRotationPoint(0.0F, (float)b0, 9.0F);
-        this.spiderLeg1 = new ModelRenderer(this, 18, 0);
-        this.spiderLeg1.addBox(-15.0F, -1.0F, -1.0F, 16, 2, 2, f);
-        this.spiderLeg1.setRotationPoint(-4.0F, (float)b0, 2.0F);
-        this.spiderLeg2 = new ModelRenderer(this, 18, 0);
-        this.spiderLeg2.addBox(-1.0F, -1.0F, -1.0F, 16, 2, 2, f);
-        this.spiderLeg2.setRotationPoint(4.0F, (float)b0, 2.0F);
-        this.spiderLeg3 = new ModelRenderer(this, 18, 0);
-        this.spiderLeg3.addBox(-15.0F, -1.0F, -1.0F, 16, 2, 2, f);
-        this.spiderLeg3.setRotationPoint(-4.0F, (float)b0, 1.0F);
-        this.spiderLeg4 = new ModelRenderer(this, 18, 0);
-        this.spiderLeg4.addBox(-1.0F, -1.0F, -1.0F, 16, 2, 2, f);
-        this.spiderLeg4.setRotationPoint(4.0F, (float)b0, 1.0F);
-        this.spiderLeg5 = new ModelRenderer(this, 18, 0);
-        this.spiderLeg5.addBox(-15.0F, -1.0F, -1.0F, 16, 2, 2, f);
-        this.spiderLeg5.setRotationPoint(-4.0F, (float)b0, 0.0F);
-        this.spiderLeg6 = new ModelRenderer(this, 18, 0);
-        this.spiderLeg6.addBox(-1.0F, -1.0F, -1.0F, 16, 2, 2, f);
-        this.spiderLeg6.setRotationPoint(4.0F, (float)b0, 0.0F);
-        this.spiderLeg7 = new ModelRenderer(this, 18, 0);
-        this.spiderLeg7.addBox(-15.0F, -1.0F, -1.0F, 16, 2, 2, f);
-        this.spiderLeg7.setRotationPoint(-4.0F, (float)b0, -1.0F);
-        this.spiderLeg8 = new ModelRenderer(this, 18, 0);
-        this.spiderLeg8.addBox(-1.0F, -1.0F, -1.0F, 16, 2, 2, f);
-        this.spiderLeg8.setRotationPoint(4.0F, (float)b0, -1.0F);
+
+    	if(rand.nextInt(100) >= 50)
+    	{
+            return "lblbm.hollowscream";
+    	}
+    	else
+    	{
+    		return null;
+    	}
+    	
+    }
+    
+    /**
+     * Returns the sound this mob makes while it's alive.
+     */
+    protected String getLivingSound()
+    {
+    	if(rand.nextInt(100) >= 25)
+    	{
+            return "lblbm:hollowscream";
+    	}
+    	else
+    	{
+    		return null;
+    	}
+
     }
 
-    /**
-     * Sets the models various rotation angles then renders the model.
-     */
-    public void render(Entity par1Entity, float par2, float par3, float par4, float par5, float par6, float par7)
-    {
-        this.setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
-        this.spiderHead.render(par7);
-        this.spiderNeck.render(par7);
-        this.spiderBody.render(par7);
-        this.spiderLeg1.render(par7);
-        this.spiderLeg2.render(par7);
-        this.spiderLeg3.render(par7);
-        this.spiderLeg4.render(par7);
-        this.spiderLeg5.render(par7);
-        this.spiderLeg6.render(par7);
-        this.spiderLeg7.render(par7);
-        this.spiderLeg8.render(par7);
-    }
 
     /**
-     * Sets the model's various rotation angles. For bipeds, par1 and par2 are used for animating the movement of arms
-     * and legs, where par1 represents the time(so that arms and legs swing back and forth) and par2 represents how
-     * "far" arms and legs can swing at most.
+     * Returns the sound this mob makes on death.
      */
-    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity)
+    protected String getDeathSound()
     {
-        this.spiderHead.rotateAngleY = par4 / (180F / (float)Math.PI);
-        this.spiderHead.rotateAngleX = par5 / (180F / (float)Math.PI);
-        float f6 = ((float)Math.PI / 4F);
-        this.spiderLeg1.rotateAngleZ = -f6;
-        this.spiderLeg2.rotateAngleZ = f6;
-        this.spiderLeg3.rotateAngleZ = -f6 * 0.74F;
-        this.spiderLeg4.rotateAngleZ = f6 * 0.74F;
-        this.spiderLeg5.rotateAngleZ = -f6 * 0.74F;
-        this.spiderLeg6.rotateAngleZ = f6 * 0.74F;
-        this.spiderLeg7.rotateAngleZ = -f6;
-        this.spiderLeg8.rotateAngleZ = f6;
-        float f7 = -0.0F;
-        float f8 = 0.3926991F;
-        this.spiderLeg1.rotateAngleY = f8 * 2.0F + f7;
-        this.spiderLeg2.rotateAngleY = -f8 * 2.0F - f7;
-        this.spiderLeg3.rotateAngleY = f8 * 1.0F + f7;
-        this.spiderLeg4.rotateAngleY = -f8 * 1.0F - f7;
-        this.spiderLeg5.rotateAngleY = -f8 * 1.0F + f7;
-        this.spiderLeg6.rotateAngleY = f8 * 1.0F - f7;
-        this.spiderLeg7.rotateAngleY = -f8 * 2.0F + f7;
-        this.spiderLeg8.rotateAngleY = f8 * 2.0F - f7;
-        float f9 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + 0.0F) * 0.4F) * par2;
-        float f10 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + (float)Math.PI) * 0.4F) * par2;
-        float f11 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + ((float)Math.PI / 2F)) * 0.4F) * par2;
-        float f12 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + ((float)Math.PI * 3F / 2F)) * 0.4F) * par2;
-        float f13 = Math.abs(MathHelper.sin(par1 * 0.6662F + 0.0F) * 0.4F) * par2;
-        float f14 = Math.abs(MathHelper.sin(par1 * 0.6662F + (float)Math.PI) * 0.4F) * par2;
-        float f15 = Math.abs(MathHelper.sin(par1 * 0.6662F + ((float)Math.PI / 2F)) * 0.4F) * par2;
-        float f16 = Math.abs(MathHelper.sin(par1 * 0.6662F + ((float)Math.PI * 3F / 2F)) * 0.4F) * par2;
-        this.spiderLeg1.rotateAngleY += f9;
-        this.spiderLeg2.rotateAngleY += -f9;
-        this.spiderLeg3.rotateAngleY += f10;
-        this.spiderLeg4.rotateAngleY += -f10;
-        this.spiderLeg5.rotateAngleY += f11;
-        this.spiderLeg6.rotateAngleY += -f11;
-        this.spiderLeg7.rotateAngleY += f12;
-        this.spiderLeg8.rotateAngleY += -f12;
-        this.spiderLeg1.rotateAngleZ += f13;
-        this.spiderLeg2.rotateAngleZ += -f13;
-        this.spiderLeg3.rotateAngleZ += f14;
-        this.spiderLeg4.rotateAngleZ += -f14;
-        this.spiderLeg5.rotateAngleZ += f15;
-        this.spiderLeg6.rotateAngleZ += -f15;
-        this.spiderLeg7.rotateAngleZ += f16;
-        this.spiderLeg8.rotateAngleZ += -f16;
+        return "lblbm:hollowscream";
+    }
+
+	protected void dropFewItems(boolean par1, int par2)
+	{
+			 super.dropFewItems(par1, par2);
+		        this.entityDropItem(new ItemStack(Items.reiatsu, 2 + rand.nextInt(3) + par2), 0.0F);
+
+		        if (this.rand.nextInt(20 - par2) == 0)
+		        {
+		            this.dropItem(Armor.SpiderHelmet.itemID, 1);
+		        }
+		
+	}
+	
+	public void onLivingUpdate()
+	{
+		super.onLivingUpdate();
+	}
+	
+	public int getMaxSpawnedInChunk()
+	{
+		return 1;
+	}
+	
+	protected void fall(float var1) {}
+	
+	
+    public boolean attackEntityAsMob(Entity par1Entity)
+    {
+        if (super.attackEntityAsMob(par1Entity))
+        {
+            if (par1Entity instanceof EntityLivingBase)
+            {
+                byte b0 = 0;
+
+                if (this.worldObj.difficultySetting > 1)
+                {
+                    if (this.worldObj.difficultySetting == 2)
+                    {
+                        b0 = 10;
+                    }
+                    else if (this.worldObj.difficultySetting == 3)
+                    {
+                        b0 = 15;
+                    }
+                }
+
+                if (b0 > 0)
+                {
+                    ((EntityLivingBase)par1Entity).addPotionEffect(new PotionEffect(Potion.confusion.id, b0 * 20, 0));
+                }
+            }
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    
+    
+    /**
+     * Basic mob attack. Default to touch of death in EntityCreature. Overridden by each mob to define their attack.
+     */
+    @Override
+    protected void attackEntity(Entity par1Entity, float par2)
+    {
+  
+
+     
+        
+            if (par2 > 2.0F && par2 < 6.0F && this.rand.nextInt(10) == 0)
+            {
+                if (this.onGround)
+                {
+                    double d0 = par1Entity.posX - this.posX;
+                    double d1 = par1Entity.posZ - this.posZ;
+                    float f2 = MathHelper.sqrt_double(d0 * d0 + d1 * d1);
+                    this.motionX = d0 / (double)f2 * 0.5D * 0.800000011920929D + this.motionX * 0.40000000298023224D;
+                    this.motionZ = d1 / (double)f2 * 0.5D * 0.800000011920929D + this.motionZ * 0.40000000298023224D;
+                    this.motionY = 0.7000000059604645D;
+                }
+            }
+            else
+            {
+                super.attackEntity(par1Entity, par2);
+            }
+        
+    }
+    
+    /**
+     * Called when the mob's health reaches 0.
+     */
+    public void onDeath(DamageSource par1DamageSource)
+    {
+        super.onDeath(par1DamageSource);
+
+        if (par1DamageSource.getEntity() instanceof EntityPlayer)
+        {
+    		ExtendedPlayer props = (ExtendedPlayer) this.attackingPlayer.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME);
+        	if(this.attackingPlayer.inventory.getCurrentItem() != null && this.attackingPlayer.inventory.getCurrentItem().itemID == Items.zanpakuto.itemID && props.getZTotal() < 80)
+        	{
+        		props.addPoints(5, 1);
+        	}
+            
+        }
+    }
+	
+    public void setTexture(int par1)
+    {
+    	this.dataWatcher.updateObject(19, Integer.valueOf(par1));
+    }
+    public int getTexture()
+    {
+        return this.dataWatcher.getWatchableObjectInt(19);
+    }
+
+    protected void entityInit()
+    {
+        super.entityInit();
+        this.dataWatcher.addObject(19, Integer.valueOf(0));
+    }
+    
+    
+    
+    /**
+     * (abstract) Protected helper method to write subclass entity data to NBT.
+     */
+    public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
+    {
+        super.writeEntityToNBT(par1NBTTagCompound);
+        par1NBTTagCompound.setInteger("Texture", this.getTexture());
+    }
+    /**
+     * (abstract) Protected helper method to read subclass entity data from NBT.
+     */
+    public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
+    {
+        super.readEntityFromNBT(par1NBTTagCompound);
+        this.setTexture(par1NBTTagCompound.getInteger("Texture"));
     }
 }
