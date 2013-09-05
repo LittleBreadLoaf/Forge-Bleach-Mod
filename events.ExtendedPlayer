@@ -516,6 +516,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties
    			this.Wind = 10;
    			this.Light = 10;
    			this.Dark = 10;
+   			this.ZType = 12;
    		}
      	 
      	 if(var3 == 11)
