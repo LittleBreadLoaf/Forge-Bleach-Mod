@@ -357,6 +357,10 @@ public class ItemZanpakuto extends Item
                 	{
                 		props.setTexture(5);
                 	}
+                	else if(props.getZType() == 4 && props.getZName().equalsIgnoreCase("ashisogi jizo"))
+                	{
+                		props.setTexture(5);
+                	}
                 	else if(props.getZType() == 5 && props.getZName().equalsIgnoreCase("piko piko"))
                 	{
                 		props.setTexture(5);
@@ -385,7 +389,7 @@ public class ItemZanpakuto extends Item
                 	{
                 		props.setTexture(5);
                 	}
-                	else if(props.getZType() == 0 && props.getZName().equalsIgnoreCase("ticonderoga"))
+                	else if(props.getZType() == 12 && props.getZName().equalsIgnoreCase("ticonderoga"))
                 	{
                 		props.setTexture(5);
                 	}
@@ -418,9 +422,24 @@ public class ItemZanpakuto extends Item
                 		props.setType(8);
 	            		props.setTexture(6);
 	            	}
+                	else if(par3EntityPlayer.username.equalsIgnoreCase("blueberry22") &&  props.getZName().equals("Undomiel"))
+	            	{
+                		props.setType(6);
+	            		props.setTexture(6);
+	            	}
                 	
                     
-                	
+                	if(props.getZType() == 0)
+                	{
+                		if(rand.nextInt(51) > 20)
+                		{
+                			props.setZType(12);
+                		}
+                		else
+                		{
+                			props.setZType(rand.nextInt(9));
+                		}
+                	}
                 	 if(props.getZType() == 1)
  	        		{
                 		ItemStack shikai = new ItemStack(Items.shikaifire, 1);
@@ -528,6 +547,10 @@ public class ItemZanpakuto extends Item
                  		if(props.getZTex() == 3)
                  		{
                  			par3EntityPlayer.addChatMessage("Contaminate," + " " + par1ItemStack.getDisplayName() + "!");
+                 		}
+                 		if(props.getZTex() == 5)
+                 		{
+                 			par3EntityPlayer.addChatMessage("Rip," + " " + par1ItemStack.getDisplayName() + "!");
                  		}
              		}
                 	 
@@ -732,7 +755,7 @@ public class ItemZanpakuto extends Item
    	            		}
    	        		}
                 	 
-                	 else if(props.getZType() == 0)
+                	 else if(props.getZType() == 12)
     	        		{
                    		 ItemStack shikai = new ItemStack(Items.shikainormal, 1);
                       		par1ItemStack.itemID = shikai.itemID;
