@@ -69,22 +69,22 @@ public class BleachMod
 	public static void init(FMLInitializationEvent event)
 	{
 		
-		proxy.loadParts();
-		//Items.init();
-		//Items.addNames();
+		//proxy.loadParts();
+		Items.init();
+		Items.addNames();
 		
-		//Blocks.init();
-		//Blocks.addNames();
+		Blocks.init();
+		Blocks.addNames();
 		
-		//Armor.init();
-		//Armor.addNames();
+		Armor.init();
+		Armor.addNames();
 		
 		new GuiHandler();
 		
-		//Recipes.init();
+		Recipes.init();
 		
-		//Entities.init();
-		//Entities.addNames();
+		Entities.init();
+		Entities.addNames();
 		
 		MinecraftForge.EVENT_BUS.register(new DataHandler());
 
@@ -97,8 +97,8 @@ public class BleachMod
 	@EventHandler
 	public static void postInit(FMLPostInitializationEvent event)
 	{
-		MinecraftForge.EVENT_BUS.register(new GuiSoulBar(Minecraft.getMinecraft()));
-		
+
+		proxy.loadGUI();
 	}
 
 	@EventHandler
