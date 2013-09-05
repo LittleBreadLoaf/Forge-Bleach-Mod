@@ -117,8 +117,8 @@ public class Names
 	public static final String[] ShikaiFire_UnlocalizedName = {"shikai_fire1", "shikai_fire2", "shikai_fire3", "shikai_fire4", "shikai_fire4", "vox_populi"};
 	public static final String[] ShikaiFire_Name = {"Fire Shikai", "Fire Shikai", "Fire Shikai", "Fire Shikai", "Fire Shikai", "Fire Shikai"};
 	
-	public static final String[] ShikaiIce_UnlocalizedName = {"shikai_ice1", "shikai_ice2", "shikai_ice3", "shikai_ice4", "shikai_ice4", "zenhansha"};
-	public static final String[] ShikaiIce_Name = {"Ice Shikai", "Ice Shikai", "Ice Shikai", "Ice Shikai", "Ice Shikai", "Ice Shikai"};
+	public static final String[] ShikaiIce_UnlocalizedName = {"shikai_ice1", "shikai_ice2", "shikai_ice3", "shikai_ice4", "shikai_ice4", "ice_cream", "zenhansha"};
+	public static final String[] ShikaiIce_Name = {"Ice Shikai", "Ice Shikai", "Ice Shikai", "Ice Shikai", "Ice Shikai", "Ice Shikai", "Zenhansha"};
 	
 	public static final String[] ShikaiHeal_UnlocalizedName = {"shikai_heal1", "shikai_heal2", "shikai_heal3", "shikai_heal4", "shikai_heal4", "love"};
 	public static final String[] ShikaiHeal_Name = {"Heal Shikai", "Heal Shikai", "Heal Shikai", "Heal Shikai", "Heal Shikai", "Heal Shikai"};
@@ -147,7 +147,7 @@ public class Names
 	public static final String[] ShikaiWater_UnlocalizedName = {"shikai_water1", "shikai_water2", "shikai_water3", "shikai_water4", "shikai_water4", "sakana", "hi_yari"};
 	public static final String[] ShikaiWater_Name = {"Water Shikai", "Water Shikai", "Water Shikai", "Water Shikai", "Water Shikai", "Water Shikai", "Hi-Yari"};
 	
-	public static final String[] ShikaiNormal_UnlocalizedName = {"shikai_normal1", "shikai_normal2", "shikai_normal3", "shikai_normal4", "shikai_normal4", "ticonderoga"};
-	public static final String[] ShikaiNormal_Name = {"Normal Shikai", "Normal Shikai", "Normal Shikai", "Normal Shikai", "Normal Shikai", "Normal Shikai"};
+	public static final String[] ShikaiNormal_UnlocalizedName = {"shikai_normal1", "shikai_normal2", "shikai_normal3", "shikai_normal4", "shikai_normal4", "ticonderoga", "setsuna"};
+	public static final String[] ShikaiNormal_Name = {"Normal Shikai", "Normal Shikai", "Normal Shikai", "Normal Shikai", "Normal Shikai", "Normal Shikai", "Setsuna"};
 
 }
