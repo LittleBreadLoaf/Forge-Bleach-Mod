@@ -26,7 +26,7 @@ public class ItemQuincyBow extends Item
 
 	public static Icon[] iconArray;
 	private static final String[] bowPullIconNameArray = {"quincy_bow_0", "quincy_bow_1", "quincy_bow_2","quincy_seele_0", "quincy_seele_1", "quincy_seele_2"};
-    @SideOnly(Side.CLIENT)
+
 
     public ItemQuincyBow(int par1)
     {
