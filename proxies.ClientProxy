@@ -1,5 +1,7 @@
 package littlebreadloaf.proxies;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.MinecraftForge;
 import littlebreadloaf.armor.Armor;
 import littlebreadloaf.blocks.Blocks;
@@ -10,6 +12,8 @@ import littlebreadloaf.entities.classes.EntitySeeleArrow;
 import littlebreadloaf.entities.renders.RenderEnergyArrow;
 import littlebreadloaf.entities.renders.RenderGetsuga;
 import littlebreadloaf.entities.renders.RenderSeeleArrow;
+import littlebreadloaf.entities.renders.Renders;
+import littlebreadloaf.gui.GuiSoulBar;
 import littlebreadloaf.items.Items;
 import littlebreadloaf.libraries.BleachSounds;
 import littlebreadloaf.libraries.Recipes;
@@ -24,6 +28,7 @@ public class ClientProxy extends CommonProxy
 		RenderingRegistry.registerEntityRenderingHandler(EntityEnergyArrow.class, new RenderEnergyArrow());
 		RenderingRegistry.registerEntityRenderingHandler(EntitySeeleArrow.class, new RenderSeeleArrow());
 		RenderingRegistry.registerEntityRenderingHandler(EntityGetsuga.class, new RenderGetsuga());
+		Renders.renderEntities();
 
 		MinecraftForge.EVENT_BUS.register(new BleachSounds());
 		
@@ -41,9 +46,20 @@ public class ClientProxy extends CommonProxy
 		Entities.addNames();
 		Entities.init();
 		
-		
 		Armor.init();
 		Armor.addNames();
+	}
+	
+	@Override
+	public int addArmor(String string)
+	{
+		return ModLoader.addArmor(string);
+	}
+	
+	@Override
+	public void loadGUI()
+	{
+		MinecraftForge.EVENT_BUS.register(new GuiSoulBar(Minecraft.getMinecraft()));
 	}
 	
 
