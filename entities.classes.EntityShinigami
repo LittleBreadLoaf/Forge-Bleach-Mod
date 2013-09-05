@@ -68,7 +68,6 @@ public class EntityShinigami extends EntityMob
 	        this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityMenosGrande.class, 0, false));
 	        this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityHollowWasp.class, 0, false));
 	        this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityHollowStalker.class, 0, false));
-	        this.isImmuneToFire = true;
 	        this.experienceValue = 15;
 		
 		
