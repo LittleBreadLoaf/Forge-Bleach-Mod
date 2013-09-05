@@ -123,14 +123,14 @@ public class Names
 	public static final String[] ShikaiHeal_UnlocalizedName = {"shikai_heal1", "shikai_heal2", "shikai_heal3", "shikai_heal4", "shikai_heal4", "love"};
 	public static final String[] ShikaiHeal_Name = {"Heal Shikai", "Heal Shikai", "Heal Shikai", "Heal Shikai", "Heal Shikai", "Heal Shikai"};
 	
-	public static final String[] ShikaiPoison_UnlocalizedName = {"shikai_poison1", "shikai_poison2", "shikai_poison3", "shikai_poison4", "shikai_poison4"};
-	public static final String[] ShikaiPoison_Name = {"Poison Shikai", "Poison Shikai", "Poison Shikai", "Poison Shikai", "Poison Shikai"};
+	public static final String[] ShikaiPoison_UnlocalizedName = {"shikai_poison1", "shikai_poison2", "shikai_poison3", "shikai_poison4", "shikai_poison4", "ashisogi_jizo"};
+	public static final String[] ShikaiPoison_Name = {"Poison Shikai", "Poison Shikai", "Poison Shikai", "Poison Shikai", "Poison Shikai", "Ashisogi Jizo"};
 	
 	public static final String[] ShikaiEarth_UnlocalizedName = {"shikai_earth1", "shikai_earth2", "shikai_earth3", "shikai_earth4", "shikai_earth4", "piko_piko"};
 	public static final String[] ShikaiEarth_Name = {"Earth Shikai", "Earth Shikai", "Earth Shikai", "Earth Shikai", "Earth Shikai", "Earth Shikai"};
 	
-	public static final String[] ShikaiWind_UnlocalizedName = {"shikai_wind1", "shikai_wind2", "shikai_wind3", "shikai_wind4", "shikai_wind4", "fightin_words", "undulatis"};
-	public static final String[] ShikaiWind_Name = {"Wind Shikai", "Wind Shikai", "Wind Shikai", "Wind Shikai", "Wind Shikai", "Wind Shikai", "Undulatis"};
+	public static final String[] ShikaiWind_UnlocalizedName = {"shikai_wind1", "shikai_wind2", "shikai_wind3", "shikai_wind4", "shikai_wind4", "fightin_words", "undulatis", "Undomiel"};
+	public static final String[] ShikaiWind_Name = {"Wind Shikai", "Wind Shikai", "Wind Shikai", "Wind Shikai", "Wind Shikai", "Wind Shikai", "Undulatis", "Undomiel"};
 	
 	public static final String[] ShikaiLight_UnlocalizedName = {"shikai_light1", "shikai_light2", "shikai_light3", "shikai_light4", "shikai_light4", "master_sword"};
 	public static final String[] ShikaiLight_Name = {"Light Shikai", "Light Shikai", "Light Shikai", "Light Shikai", "Light Shikai", "Light Shikai"};
