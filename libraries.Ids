@@ -41,6 +41,7 @@ public class Ids
 	
 	
 	
+	
 	public static int zanpakutoID;
 	public static final int zanpakutoID_Default = 20181;
 	
