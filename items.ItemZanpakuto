@@ -263,20 +263,56 @@ public class ItemZanpakuto extends Item
         return par1ItemStack;
     }
     
-    @SideOnly(Side.CLIENT)
+@SideOnly(Side.CLIENT)
     public void onUsingItemTick(ItemStack stack, EntityPlayer player, int count)
     {
-    	double var2 = player.posX;
-    	double var3 = player.posY;
-    	double var4 = player.posZ;
+	ExtendedPlayer props = (ExtendedPlayer) player.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME);
+	  if (((float)200 / (float)props.getCurrentCap()) <= props.getCurrentEnergy() &&  props.getPoints(9) >= 80 && stack.hasDisplayName() && stack.getDisplayName().equals(props.getZName()))
+      {
+		  double var2 = player.posX;
+	    	double var3 = player.posY;
+	    	double var4 = player.posZ;
 
-        double var6 = (double)((float)var2 + 0.5F );
-        double var10 = (double)((float)var4 + 0.5F);
-        if(!player.worldObj.isRemote)
-        {
-            ParticleEffects.spawnParticle("spirit", var2 - 0.9, var3 + 1, var4 + 0.5, 0.0D, 0.0D, 0.0D);
-            ParticleEffects.spawnParticle("spirit", var2 - 0.9, var3 + 1, var4 + 0.5, 0.0D, 0.0D, 0.0D);
-        }
+	        double var6 = (double)((float)var2 + 0.5F );
+	        double var10 = (double)((float)var4 + 0.5F);
+	        if(!player.worldObj.isRemote)
+	        {
+	            ParticleEffects.spawnParticle("spirit", var2 - 0.9, var3 + 1, var4 + 0.5, 0.0D, 0.0D, 0.0D);
+	            ParticleEffects.spawnParticle("spirit", var2 - 0.9, var3 + 1, var4 + 0.5, 0.0D, 0.0D, 0.0D);
+	        }
+	        
+	        if(player.username.equalsIgnoreCase("_jad3n") && props.getZName().equals("Undulatis"))
+	    	{
+	    		props.setType(3);
+	    		props.setTexture(6);
+	    	}
+	    	else if(player.username.equalsIgnoreCase("thecodymaverick") && props.getZName().equals("Hi-Yari"))
+	    	{
+	    		props.setType(11);
+	    		props.setTexture(6);
+	    	}
+	    	else if(player.username.equalsIgnoreCase("JoeTheAntiPro")&& props.getZName().equals("Zenhansha"))
+	    	{
+	    		props.setType(1);
+	    		props.setTexture(6);
+	    	}
+	    	else if(player.username.equalsIgnoreCase("theagirl") && props.getZName().equals("Setsuna"))
+	    	{
+	    		props.setType(10);
+	    		props.setTexture(6);
+	    	}
+	    	else if(player.username.equalsIgnoreCase("jrich144") &&  props.getZName().equals("Kage Kishi"))
+	    	{
+	    		props.setType(7);
+	    		props.setTexture(6);
+	    	}
+	    	else if(player.username.equalsIgnoreCase("Player750") &&  props.getZName().equals("Anduril"))
+	    	{
+	    		props.setType(3);
+	    		props.setTexture(7);
+	    	}  
+      }
+    	
         
     }
 
@@ -397,38 +433,10 @@ public class ItemZanpakuto extends Item
                 	
                 	
                 	
-                	else if(par3EntityPlayer.username.equalsIgnoreCase("_jad3n") && props.getZName().equals("Undulatis"))
-                	{
-                		props.setType(6);
-                		props.setTexture(6);
-                	}
-                	else if(par3EntityPlayer.username.equalsIgnoreCase("thecodymaverick") && props.getZName().equals("Hi-Yari"))
-                	{
-                		props.setType(11);
-                		props.setTexture(6);
-                	}
-                	else if(par3EntityPlayer.username.equalsIgnoreCase("JoeTheAntiPro")&& props.getZName().equals("Zenhansha"))
-	            	{
-                		props.setType(2);
-	            		props.setTexture(6);
-	            	}
-                	else if(par3EntityPlayer.username.equalsIgnoreCase("theagirl") && props.getZName().equals("Setsuna"))
-	            	{
-                		props.setType(0);
-	            		props.setTexture(6);
-	            	}
-                	else if(par3EntityPlayer.username.equalsIgnoreCase("jrich144") &&  props.getZName().equals("Kage Kishi"))
-	            	{
-                		props.setType(8);
-	            		props.setTexture(6);
-	            	}
-                	else if(par3EntityPlayer.username.equalsIgnoreCase("blueberry22") &&  props.getZName().equals("Undomiel"))
-	            	{
-                		props.setType(6);
-	            		props.setTexture(6);
-	            	}
                 	
-                    
+                	
+      
+                	
                 	if(props.getZType() == 0)
                 	{
                 		if(rand.nextInt(51) > 20)
@@ -440,6 +448,8 @@ public class ItemZanpakuto extends Item
                 			props.setZType(rand.nextInt(9));
                 		}
                 	}
+                	
+                	
                 	 if(props.getZType() == 1)
  	        		{
                 		ItemStack shikai = new ItemStack(Items.shikaifire, 1);
@@ -609,6 +619,10 @@ public class ItemZanpakuto extends Item
   	            		if(props.getZTex() == 6)
   	            		{
   	            			par3EntityPlayer.addChatMessage("Undulatis, blow everything away!");
+  	            		}
+  	            		if(props.getZTex() == 7)
+  	            		{
+  	            			par3EntityPlayer.addChatMessage("Anduril, Flame of the West!");
   	            		}
   	        		}
                 	 
