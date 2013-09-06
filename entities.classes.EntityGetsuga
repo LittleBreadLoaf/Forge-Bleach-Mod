@@ -191,12 +191,15 @@ public class EntityGetsuga extends Entity implements IProjectile
         int ar3 = MathHelper.floor_double(this.posZ);
 
 
-        
-                for (int ar7 = -4; ar7 <= 0; ++ar7)
+        for (int ar5 = -1; ar5 <= 0; ++ar5)
+        {
+            for (int ar6 = -1; ar6 <= 0; ++ar6)
+            {
+                for (int ar7 = -2; ar7 <= 0; ++ar7)
                 {
-                    int ar8 = ar2;
+                    int ar8 = ar2 + ar5;
                     int ar9 = ar1 + ar7;
-                    int ar10 = ar3;
+                    int ar10 = ar3 + ar6;
                     int ar11 = this.worldObj.getBlockId(ar8, ar9, ar10);
                     int ar12;
 
@@ -211,6 +214,8 @@ public class EntityGetsuga extends Entity implements IProjectile
                     }
 
                 }
+            }
+        }
         
       
         
@@ -289,7 +294,7 @@ public class EntityGetsuga extends Entity implements IProjectile
                 var19 = this.worldObj.getWorldVec3Pool().getVecFromPool(var4.hitVec.xCoord, var4.hitVec.yCoord, var4.hitVec.zCoord);
             }
 
-            if (this.ticksInAir == 300)
+            if (this.ticksInAir == 40)
             {
                 this.setDead();
             }
@@ -347,7 +352,7 @@ public class EntityGetsuga extends Entity implements IProjectile
                 	}
                 	
                 	
-                	this.ticksInAir = 495;
+                	this.ticksInAir = 195;
                 	
                 	
                     var20 = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionY * this.motionY + this.motionZ * this.motionZ);
