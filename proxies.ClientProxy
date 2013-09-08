@@ -1,6 +1,9 @@
 package littlebreadloaf.proxies;
 
+import org.lwjgl.input.Keyboard;
+
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.MinecraftForge;
 import littlebreadloaf.armor.Armor;
@@ -13,10 +16,12 @@ import littlebreadloaf.entities.renders.RenderEnergyArrow;
 import littlebreadloaf.entities.renders.RenderGetsuga;
 import littlebreadloaf.entities.renders.RenderSeeleArrow;
 import littlebreadloaf.entities.renders.Renders;
+import littlebreadloaf.extras.ShikaiKeyBind;
 import littlebreadloaf.gui.GuiSoulBar;
 import littlebreadloaf.items.Items;
 import littlebreadloaf.libraries.BleachSounds;
 import littlebreadloaf.libraries.Recipes;
+import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
 
@@ -48,6 +53,10 @@ public class ClientProxy extends CommonProxy
 		
 		Armor.init();
 		Armor.addNames();
+		
+		
+		
+		
 	}
 	
 	@Override
@@ -60,6 +69,14 @@ public class ClientProxy extends CommonProxy
 	public void loadGUI()
 	{
 		MinecraftForge.EVENT_BUS.register(new GuiSoulBar(Minecraft.getMinecraft()));
+	}
+	
+	@Override
+	public void loadKeys()
+	{
+		KeyBinding[] key = {new KeyBinding("ShikaiKey", Keyboard.KEY_Z)};
+		boolean[] repeat = {false};
+		KeyBindingRegistry.registerKeyBinding(new ShikaiKeyBind(key, repeat));
 	}
 	
 
