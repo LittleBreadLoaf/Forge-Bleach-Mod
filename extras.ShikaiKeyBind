@@ -1,0 +1,100 @@
+package littlebreadloaf.extras;
+import java.util.EnumSet;
+
+import littlebreadloaf.items.Items;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.client.registry.KeyBindingRegistry.KeyHandler;
+import cpw.mods.fml.common.TickType;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+@SideOnly(Side.CLIENT)
+public class ShikaiKeyBind extends KeyHandler
+{
+		public static boolean keyPressed = false;
+		private Minecraft mc = Minecraft.getMinecraft();
+         private EnumSet tickTypes = EnumSet.of(TickType.CLIENT);
+        
+         public ShikaiKeyBind(KeyBinding[] keyBindings, boolean[] repeatings)
+         {
+                 super(keyBindings, repeatings);
+         }
+         @Override
+         public String getLabel()
+         {
+                 return "ShikaiKey";
+         }
+         @Override
+         public void keyDown(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd, boolean isRepeat)
+         {
+                this.keyPressed = true;
+               EntityPlayer player = mc.thePlayer;
+       		ItemStack heldItem = player.getCurrentEquippedItem();
+    		ItemStack var13 = new ItemStack(Items.zanpakuto, 1);
+               if(heldItem != null )
+               {
+            	   if(heldItem.getItem() == Items.shikaifire)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+            	   if(heldItem.getItem() == Items.shikaiice)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+            	   if(heldItem.getItem() == Items.shikaiheal)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+            	   if(heldItem.getItem() == Items.shikaipoison)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+            	   if(heldItem.getItem() == Items.shikaiearth)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+            	   if(heldItem.getItem() == Items.shikaiwind)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+            	   if(heldItem.getItem() == Items.shikailight)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+            	   if(heldItem.getItem() == Items.shikaidark)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+            	   if(heldItem.getItem() == Items.shikailightning)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+            	   if(heldItem.getItem() == Items.shikaiwater)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+            	   if(heldItem.getItem() == Items.shikailunar)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+            	   if(heldItem.getItem() == Items.shikainormal)
+            	   {
+            		   heldItem.itemID = var13.itemID;
+            	   }
+               }
+         }
+         @Override
+         public void keyUp(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd)
+         {
+                 this.keyPressed = false;
+         }
+         @Override
+         public EnumSet<TickType> ticks()
+         {
+                 return tickTypes;
+         }
+}
