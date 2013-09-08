@@ -22,7 +22,7 @@ public class Recipes
 		});
 		
 		//Hollow Bait
-				GameRegistry.addRecipe(new ItemStack(Blocks.reiatsuBlock, 1), new Object[]{
+				GameRegistry.addRecipe(new ItemStack(Blocks.hollowBait, 1), new Object[]{
 					" * ",
 					"*#*",
 					" * ",
