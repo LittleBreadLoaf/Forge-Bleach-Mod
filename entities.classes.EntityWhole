@@ -388,7 +388,7 @@ public class EntityWhole extends EntityMob
     		
     		
         }
-    	if (par1DamageSource.getEntity() instanceof EntityHollowWasp)
+    	if (par1DamageSource.getEntity() instanceof EntityHollowStalker)
         {
     		if(randomHollow == 1)
     		{
