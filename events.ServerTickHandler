@@ -5,6 +5,7 @@ import java.util.EnumSet;
 import org.lwjgl.input.Keyboard;
 
 import littlebreadloaf.armor.Armor;
+import littlebreadloaf.extras.ShikaiKeyBind;
 import littlebreadloaf.items.Items;
 
 import net.minecraft.block.material.Material;
@@ -231,10 +232,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+				//{
+				//	heldItem.itemID = var13.itemID;
+				//}
 			}
 			
 			if(heldItem.getItem() == Items.shikaiice)
@@ -250,10 +251,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+				//{
+				//	heldItem.itemID = var13.itemID;
+				//}
 			}
 			
 			if(heldItem.getItem() == Items.shikaiheal)
@@ -269,10 +270,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+				//{
+				//	heldItem.itemID = var13.itemID;
+				//}
 			}
 			
 			if(heldItem.getItem() == Items.shikaipoison)
@@ -288,10 +289,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+				//{
+				//	heldItem.itemID = var13.itemID;
+				//}
 			}
 			
 			if(heldItem.getItem() == Items.shikaiearth)
@@ -307,10 +308,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+				//{
+				//	heldItem.itemID = var13.itemID;
+				//}
 			}
 			
 			if(heldItem.getItem() == Items.shikaiwind)
@@ -326,10 +327,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+				//{
+				//	heldItem.itemID = var13.itemID;
+				//}
 				player.fallDistance = 0;
 	        	player.addPotionEffect(new PotionEffect(Potion.jump.id, 20, 3));
 	        	if(heldItem.getItemDamage() == 6)
@@ -351,10 +352,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+				//{
+				//	heldItem.itemID = var13.itemID;
+				//}
 			}
 			
 			if(heldItem.getItem() == Items.shikaidark)
@@ -370,10 +371,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+				//{
+				//	heldItem.itemID = var13.itemID;
+				//}
 				
 			}
 			
@@ -390,10 +391,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+				//{
+				//	heldItem.itemID = var13.itemID;
+				//}
 				
 			}
 			
@@ -410,10 +411,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+				//{
+				//	heldItem.itemID = var13.itemID;
+				//}
 				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 40, 0));
 				player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 40, 0));
 				
@@ -432,10 +433,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+				//{
+				//	heldItem.itemID = var13.itemID;
+				//}
 				
 	    		if(player.isInWater())
 	    		{
@@ -459,10 +460,10 @@ public class ServerTickHandler implements ITickHandler
 				{
 					heldItem.itemID = var13.itemID;
 				}
-				if(Keyboard.isKeyDown(Keyboard.KEY_Z) && !player.worldObj.isRemote)
-				{
-					heldItem.itemID = var13.itemID;
-				}
+				//if(ShikaiKeyBind.keyPressed && !player.worldObj.isRemote)
+			//	{
+				//	heldItem.itemID = var13.itemID;
+				//}
 	    		
 				player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 40, 1));
 				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 40, 1));
