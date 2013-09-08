@@ -1,5 +1,7 @@
 package littlebreadloaf;
 
+import org.lwjgl.input.Keyboard;
+
 import littlebreadloaf.armor.Armor;
 import littlebreadloaf.blocks.Blocks;
 import littlebreadloaf.commands.CommandResetSpirit;
@@ -10,6 +12,7 @@ import littlebreadloaf.commands.CommandSpirit;
 import littlebreadloaf.entities.classes.CustomSpawner;
 import littlebreadloaf.entities.classes.Entities;
 import littlebreadloaf.events.DataHandler;
+import littlebreadloaf.extras.ShikaiKeyBind;
 import littlebreadloaf.gui.GuiHandler;
 import littlebreadloaf.gui.GuiSoulBar;
 import littlebreadloaf.items.Items;
@@ -20,6 +23,7 @@ import littlebreadloaf.libraries.PacketHandler;
 import littlebreadloaf.libraries.Recipes;
 import littlebreadloaf.proxies.CommonProxy;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.command.ICommandManager;
 import net.minecraft.command.ServerCommandManager;
 import net.minecraft.entity.Entity;
@@ -28,6 +32,7 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.item.Item;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -69,22 +74,24 @@ public class BleachMod
 	public static void init(FMLInitializationEvent event)
 	{
 		
-		//proxy.loadParts();
-		Items.init();
-		Items.addNames();
+		proxy.loadParts();
+		//Items.init();
+		//Items.addNames();
 		
-		Blocks.init();
-		Blocks.addNames();
+		//Blocks.init();
+		//Blocks.addNames();
 		
-		Armor.init();
-		Armor.addNames();
+		//Armor.init();
+		//Armor.addNames();
 		
 		new GuiHandler();
 		
 		Recipes.init();
 		
-		Entities.init();
-		Entities.addNames();
+		//Entities.init();
+		//Entities.addNames();
+		
+		proxy.loadKeys();
 		
 		MinecraftForge.EVENT_BUS.register(new DataHandler());
 
