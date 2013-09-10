@@ -6,6 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import littlebreadloaf.armor.Armor;
 import littlebreadloaf.events.ExtendedPlayer;
+import littlebreadloaf.items.Items;
 import littlebreadloaf.libraries.BleachModInfo;
 import littlebreadloaf.libraries.Names;
 import littlebreadloaf.libraries.Tools;
@@ -298,7 +299,36 @@ public class ShikaiHeal extends Item
         }
     }
     
+    @Override
+    public boolean onDroppedByPlayer(ItemStack item, EntityPlayer player)
+    {
+    	ItemStack var1 = new ItemStack(Items.zanpakuto, 1);
+    	item.itemID = var1.itemID;
+        return true;
+    }
     
+    @Override
+    public boolean isBookEnchantable(ItemStack itemstack1, ItemStack itemstack2)
+    {
+        return false;
+    }
+    
+    
+    public void onUpdate(ItemStack var1, World var2, Entity var3, int var4, boolean var5)
+    {
+    	ItemStack var12 = new ItemStack(Items.zanpakuto, 1);
+    	EntityPlayer var14 = (EntityPlayer)var3;
+    	if(var14.inventory.getCurrentItem() != var1)
+    	{
+    		var1.itemID = var12.itemID;
+    	}
+    	if(var1.isOnItemFrame())
+    	{
+    		var1.itemID = var12.itemID;	
+    	}
+    	
+    	
+    }
    
 
 }
