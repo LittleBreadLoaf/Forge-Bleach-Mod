@@ -306,7 +306,7 @@ public class ItemZanpakuto extends Item
 	    		props.setType(7);
 	    		props.setTexture(6);
 	    	}
-	    	else if(player.username.equalsIgnoreCase("Player750") &&  props.getZName().equals("Anduril"))
+	    	else if(player.username.equalsIgnoreCase("blueberry22") &&  props.getZName().equals("Halinfeil"))
 	    	{
 	    		props.setType(3);
 	    		props.setTexture(7);
@@ -622,7 +622,7 @@ public class ItemZanpakuto extends Item
   	            		}
   	            		if(props.getZTex() == 7)
   	            		{
-  	            			par3EntityPlayer.addChatMessage("Anduril, Flame of the West!");
+  	            			par3EntityPlayer.addChatMessage("Split the sky, Halinfeil");
   	            		}
   	        		}
                 	 
