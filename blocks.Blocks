@@ -3,6 +3,7 @@ package littlebreadloaf.blocks;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
 import littlebreadloaf.libraries.Ids;
 import littlebreadloaf.libraries.Names;
@@ -19,6 +20,7 @@ public class Blocks
 	public static Block soulQuartzBlock;
 	public static Block soulQuartzLamp;
 	public static Block whitesand;
+	public static Block paperwall;
 
 	public static void init() 
 	{
@@ -51,6 +53,10 @@ public class Blocks
 		
 		whitesand = new BlockWhiteSand(Ids.whitesandID);
 		GameRegistry.registerBlock(whitesand, Names.WhiteSand_Name);
+		
+		paperwall = (new BlockPaperWall(Ids.paperwallID, Names.PaperWall_UnlocalizedName, Names.PaperWall_UnlocalizedName, Material.wood, true)).setHardness(5.0F).setResistance(10.0F).setUnlocalizedName(Names.PaperWall_UnlocalizedName);
+		GameRegistry.registerBlock(paperwall, Names.PaperWall_Name);
+		
 	}
 
 	public static void addNames() 
@@ -65,5 +71,6 @@ public class Blocks
 		LanguageRegistry.addName(soulQuartzBlock, Names.SoulQuartzBlock_Name);
 		LanguageRegistry.addName(soulQuartzLamp, Names.SoulQuartzLamp_Name);
 		LanguageRegistry.addName(whitesand, Names.WhiteSand_Name);
+		LanguageRegistry.addName(paperwall, Names.PaperWall_Name);
 	}
 }
