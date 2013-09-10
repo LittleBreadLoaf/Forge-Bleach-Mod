@@ -29,9 +29,16 @@ public class Recipes
 					
 					'*', Blocks.reiatsuBlock, '#', Items.maskshard
 				});
-		
+		//Reiatsu Block
+		GameRegistry.addRecipe(new ItemStack(Blocks.paperwall, 8), new Object[]{
+			"*#*",
+			"###",
+			"*#*",
+			
+			'*', Items.reiatsu, '#', Item.stick
+		});
 		//Soul Cloth
-		GameRegistry.addRecipe(new ItemStack(Items.soulcloth, 2), new Object [] {
+		GameRegistry.addRecipe(new ItemStack(Items.soulcloth, 1), new Object [] {
 			"***",
 			"*#*",
 			"***",
