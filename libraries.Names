@@ -35,6 +35,9 @@ public class Names
 	public static final String WhiteSand_UnlocalizedName = "white_sand";
 	public static final String WhiteSand_Name = "White Sand";
 	
+	public static final String PaperWall_UnlocalizedName = "paper_wall";
+	public static final String PaperWall_Name = "Paper Wall";
+	
 	
 	
 	
