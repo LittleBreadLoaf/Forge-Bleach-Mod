@@ -32,6 +32,8 @@ public class ConfigHandler
 		
 		Ids.whitesandID = config.get(config.CATEGORY_BLOCK, "White Sand ID", Ids.whitesandID_Default).getInt();
 		
+		Ids.paperwallID = config.get(config.CATEGORY_BLOCK, "Paper Wall ID", Ids.paperwallID_Default).getInt();
+		
 		
 		
 		
