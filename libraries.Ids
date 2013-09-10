@@ -37,6 +37,9 @@ public class Ids
 	public static int whitesandID;
 	public static final int whitesandID_Default = 2190;
 	
+	public static int paperwallID;
+	public static final int paperwallID_Default = 2191;
+	
 	
 	
 	
