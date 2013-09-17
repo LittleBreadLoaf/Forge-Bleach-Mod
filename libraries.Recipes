@@ -35,7 +35,7 @@ public class Recipes
 			"###",
 			"*#*",
 			
-			'*', Items.reiatsu, '#', Item.stick
+			'*', Items.soulcloth, '#', Item.stick
 		});
 		//Soul Cloth
 		GameRegistry.addRecipe(new ItemStack(Items.soulcloth, 1), new Object [] {
