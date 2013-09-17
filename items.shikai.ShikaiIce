@@ -275,8 +275,9 @@ public class ShikaiIce extends Item
 
     public Multimap func_111205_h()
     {
+    	float damage = this.getDamage();
         Multimap multimap = super.func_111205_h();
-        multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Weapon modifier", (double)this.getDamage(), 0));
+        multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Weapon modifier", (double)damage, 0));
         return multimap;
     }
     
@@ -290,13 +291,7 @@ public class ShikaiIce extends Item
     
     }
     
-    @Override
-    public boolean onDroppedByPlayer(ItemStack item, EntityPlayer player)
-    {
-    	ItemStack var1 = new ItemStack(Items.zanpakuto, 1);
-    	item.itemID = var1.itemID;
-        return true;
-    }
+    
     
     @Override
     public boolean isBookEnchantable(ItemStack itemstack1, ItemStack itemstack2)
@@ -310,14 +305,11 @@ public class ShikaiIce extends Item
     {
     	EntityPlayer var6 = (EntityPlayer)var3;
     	ItemStack var12 = new ItemStack(Items.zanpakuto, 1);
-    	if(var6.inventory.getCurrentItem() != var1)
+    	if(var6.inventory.getCurrentItem() == var1)
     	{
-    		var1.itemID = var12.itemID;
-    	}
-    	if(var1.isOnItemFrame())
-    	{
-    		var1.itemID = var12.itemID;	
-    	}
+    		
+    	
+    	
     	 if(!var2.isRemote)
     	 {
     		 for(int icex = -2; icex < 2; ++icex)
@@ -336,6 +328,7 @@ public class ShikaiIce extends Item
     	    		}
     	    	}
     	 }
+    }
     }
 
 }
