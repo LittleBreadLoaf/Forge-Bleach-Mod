@@ -8,12 +8,14 @@ import littlebreadloaf.entities.classes.EntityEnergyArrow;
 import littlebreadloaf.entities.classes.EntitySeeleArrow;
 import littlebreadloaf.events.ExtendedPlayer;
 import littlebreadloaf.extras.ParticleEffects;
+import littlebreadloaf.extras.ShikaiKeyBind;
 import littlebreadloaf.libraries.BleachModInfo;
 import littlebreadloaf.libraries.Names;
 import littlebreadloaf.libraries.Tools;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -281,36 +283,7 @@ public class ItemZanpakuto extends Item
 	            ParticleEffects.spawnParticle("spirit", var2 - 0.9, var3 + 1, var4 + 0.5, 0.0D, 0.0D, 0.0D);
 	        }
 	        
-	        if(player.username.equalsIgnoreCase("_jad3n") && props.getZName().equals("Undulatis"))
-	    	{
-	    		props.setType(3);
-	    		props.setTexture(6);
-	    	}
-	    	else if(player.username.equalsIgnoreCase("thecodymaverick") && props.getZName().equals("Hi-Yari"))
-	    	{
-	    		props.setType(11);
-	    		props.setTexture(6);
-	    	}
-	    	else if(player.username.equalsIgnoreCase("JoeTheAntiPro")&& props.getZName().equals("Zenhansha"))
-	    	{
-	    		props.setType(1);
-	    		props.setTexture(6);
-	    	}
-	    	else if(player.username.equalsIgnoreCase("theagirl") && props.getZName().equals("Setsuna"))
-	    	{
-	    		props.setType(10);
-	    		props.setTexture(6);
-	    	}
-	    	else if(player.username.equalsIgnoreCase("jrich144") &&  props.getZName().equals("Kage Kishi"))
-	    	{
-	    		props.setType(7);
-	    		props.setTexture(6);
-	    	}
-	    	else if(player.username.equalsIgnoreCase("blueberry22") &&  props.getZName().equals("Halinfeil"))
-	    	{
-	    		props.setType(3);
-	    		props.setTexture(7);
-	    	}  
+	   
       }
     	
         
@@ -807,7 +780,91 @@ public class ItemZanpakuto extends Item
 
             
         }
+        
+        
     }
     
+    
+    public void onUpdate(ItemStack var1, World var2, Entity var3, int var4, boolean var5)
+    {
+    	EntityPlayer player = (EntityPlayer)var3;
+    	ExtendedPlayer props = (ExtendedPlayer) player.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME);
+    	
+        if(player.username.equalsIgnoreCase("_jad3n"))
+    	{
+        	if( props.getZName().equals("Undulatis") && props.getZTex() != 6)
+        	{
+        		props.setType(3);
+        		props.setTexture(6);
+        	}
+        	else if(!props.getZName().equals("Undulatis") && props.getZTex() == 6)
+        	{
+        		props.setTexture(rand.nextInt(4));
+        	}
+    	}
+    	else if(player.username.equalsIgnoreCase("thecodymaverick") )
+    	{
+    		if( props.getZName().equals("Hi-Yari") && props.getZTex() != 6)
+    		{
+        		props.setType(11);
+        		props.setTexture(6);
+    		}
+    		else if(!props.getZName().equals("Hi-Yari") && props.getZTex() == 6)
+        	{
+        		props.setTexture(rand.nextInt(4));
+        	}
+    	}
+    	else if(player.username.equalsIgnoreCase("JoeTheAntiPro"))
+    	{
+    		if( props.getZName().equals("Zenhansha") && props.getZTex() != 6)
+    		{
+        		props.setType(1);
+        		props.setTexture(6);	
+    		}
+    		else if(!props.getZName().equals("Zenhansha") && props.getZTex() == 6)
+        	{
+        		props.setTexture(rand.nextInt(4));
+        	}
+    	}
+    	else if(player.username.equalsIgnoreCase("theagirl") )
+    	{
+    		if( props.getZName().equals("Setsuna") && props.getZTex() != 6)
+    		{
+    		props.setType(10);
+    		props.setTexture(6);
+    		}
+    		else if(!props.getZName().equals("Setsuna") && props.getZTex() == 6)
+        	{
+        		props.setTexture(rand.nextInt(4));
+        	}
+    	}
+    	else if(player.username.equalsIgnoreCase("jrich144"))
+    	{
+    		if( props.getZName().equals("Kage Kishi") && props.getZTex() != 6)
+    		{
+    		props.setType(7);
+    		props.setTexture(6);
+    		}
+    		else if(!props.getZName().equals("Kage Kishi") && props.getZTex() == 6)
+        	{
+        		props.setTexture(rand.nextInt(4));
+        	}
+    	}
+    	else if(player.username.equalsIgnoreCase("blueberry22") )
+    	{
+    		if(props.getZName().equals("Halinfeil") && props.getZTex() != 7)
+    		{
+    		props.setType(3);
+    		props.setTexture(7);
+    		}
+    		else if(!props.getZName().equals("Halinfeil") && props.getZTex() == 7)
+        	{
+        		props.setTexture(rand.nextInt(4));
+        	}
+    	}  
+    	
+    }
+    
+   
     
 }
