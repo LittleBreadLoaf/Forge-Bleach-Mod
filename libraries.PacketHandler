@@ -23,9 +23,37 @@ public class PacketHandler implements IPacketHandler
 			handleExtendedProperties(packet, player);
 		}
 		
+		else if(packet.channel.equals("Shikai"))
+		{
+			handleDeactivating(packet, player);
+		}
+	
+		
+		
 		
 	}
 	
+
+
+
+	
+
+	private void handleDeactivating(Packet250CustomPayload packet, Player player) 
+	{
+		DataInputStream inputStream = new DataInputStream(new ByteArrayInputStream(packet.data));
+
+		ExtendedPlayer props = ((ExtendedPlayer)((EntityPlayer) player).getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME));
+		System.out.println("Packet Recieved");
+		try 
+		{
+			props.deactivateShikai(inputStream.readInt());
+			
+		} catch (IOException e){
+			e.printStackTrace();
+		}
+		
+	}
+
 	private void handleExtendedProperties(Packet250CustomPayload packet, Player player)
 	{
 		DataInputStream inputStream = new DataInputStream(new ByteArrayInputStream(packet.data));
