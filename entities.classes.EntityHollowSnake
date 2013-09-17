@@ -55,6 +55,7 @@ public class EntityHollowSnake extends EntityMob
 	        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityWhole.class, 0, false));
 	        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityShinigami.class, 0, false));
 	        this.experienceValue = 15;
+	        this.setSize(0.7F, 3.0F);
 		
 		
 	}
