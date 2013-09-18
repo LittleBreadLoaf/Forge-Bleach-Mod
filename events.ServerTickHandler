@@ -438,10 +438,7 @@ public class ServerTickHandler implements ITickHandler
 				//	heldItem.itemID = var13.itemID;
 				//}
 				
-	    		if(player.isInWater())
-	    		{
-	    			
-	    		}
+	    		
 
 	    		
 				player.addPotionEffect(new PotionEffect(Potion.waterBreathing.id, 40, 0));
@@ -470,7 +467,20 @@ public class ServerTickHandler implements ITickHandler
 				
 			}
 			
+			
+			
+			
+			
+			
+			
+			
 		}
+		
+		
+		
+		
+		
+		
 		
 		
 		
