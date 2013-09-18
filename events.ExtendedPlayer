@@ -41,7 +41,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 	private int Dark = 0;
 	private int ZTotal = 0;
 	private int ZType = 0;
-	private int ZTex = 4;
+	private int ZTex = 5;
 	private String ZName = "";
 	
 	public ExtendedPlayer(EntityPlayer player)
@@ -358,7 +358,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 		this.Dark = 0;
 		this.ZTotal = 0;
 		this.ZType = 0;
-		this.ZTex = rand.nextInt(4);
+		this.randomTexture();
 		this.ZName = "";
 	}
 	public int getZTex()
@@ -376,7 +376,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 	}
 	public void randomTexture()
 	{
-		this.ZTex = rand.nextInt(4);
+		this.ZTex = rand.nextInt(5);
 	}
 	public void setZType(int var1)
 	{
@@ -599,7 +599,6 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 	{
 		ItemStack heldItem = player.getCurrentEquippedItem();
 		heldItem.itemID = id;
-		System.out.println("ID Changed");
 	}
 
 	public void syncSwords() 
@@ -619,7 +618,6 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 		packet.channel = "Shikai";
 		packet.data = bos.toByteArray();
 		packet.length = bos.size();
-		System.out.println("Reached Extended Player");
 		
 		Side side = FMLCommonHandler.instance().getEffectiveSide();
 		
@@ -627,7 +625,6 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 		{
 			EntityClientPlayerMP player1 = (EntityClientPlayerMP)player;
 			player1.sendQueue.addToSendQueue(packet);
-			System.out.println("Packet Sent by Extended Player");
 		}
 	}
 	
