@@ -212,7 +212,7 @@ public class ItemZanpakuto extends Item
     public void onCreated(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer) 
     {
     	ExtendedPlayer props = (ExtendedPlayer) par3EntityPlayer.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME);
-    	if(props.getZTex() == 4)
+    	if(props.getZTex() == 5)
     	{
     		props.randomTexture();
     	}
@@ -444,6 +444,10 @@ public class ItemZanpakuto extends Item
  	            		{
  	            			par3EntityPlayer.addChatMessage("Ignite," + " " + par1ItemStack.getDisplayName() + "!");
  	            		}
+ 	            		if(props.getZTex() == 4)
+ 	            		{
+ 	            			par3EntityPlayer.addChatMessage("Blaze," + " " + par1ItemStack.getDisplayName() + "!");
+ 	            		}
  	            		if(props.getZTex() == 5)
  	            		{
  	            			par3EntityPlayer.addChatMessage("Subscribe," + " " + par1ItemStack.getDisplayName() + "!");
@@ -471,6 +475,10 @@ public class ItemZanpakuto extends Item
  	            		if(props.getZTex() == 3)
  	            		{
  	            			par3EntityPlayer.addChatMessage("Freeze," + " " + par1ItemStack.getDisplayName() + "!");
+ 	            		}
+ 	            		if(props.getZTex() == 4)
+ 	            		{
+ 	            			par3EntityPlayer.addChatMessage("Snow eternally," + " " + par1ItemStack.getDisplayName() + "!");
  	            		}
  	            		if(props.getZTex() == 5)
  	            		{
@@ -504,6 +512,10 @@ public class ItemZanpakuto extends Item
  	            		{
  	            			par3EntityPlayer.addChatMessage("Restore," + " " + par1ItemStack.getDisplayName() + "!");
  	            		}
+ 	            		if(props.getZTex() == 4)
+ 	            		{
+ 	            			par3EntityPlayer.addChatMessage("Heal," + " " + par1ItemStack.getDisplayName() + "!");
+ 	            		}
  	            		if(props.getZTex() == 5)
  	            		{
  	            			par3EntityPlayer.addChatMessage("All you need is love!");
@@ -530,6 +542,10 @@ public class ItemZanpakuto extends Item
                  		if(props.getZTex() == 3)
                  		{
                  			par3EntityPlayer.addChatMessage("Contaminate," + " " + par1ItemStack.getDisplayName() + "!");
+                 		}
+                 		if(props.getZTex() == 4)
+                 		{
+                 			par3EntityPlayer.addChatMessage("Spread your toxins," + " " + par1ItemStack.getDisplayName() + "!");
                  		}
                  		if(props.getZTex() == 5)
                  		{
@@ -558,6 +574,10 @@ public class ItemZanpakuto extends Item
  	            		{
  	            			par3EntityPlayer.addChatMessage("Demolish," + " " + par1ItemStack.getDisplayName() + "!");
  	            		}
+ 	            		if(props.getZTex() == 4)
+ 	            		{
+ 	            			par3EntityPlayer.addChatMessage("Strike down," + " " + par1ItemStack.getDisplayName() + "!");
+ 	            		}
  	            		if(props.getZTex() == 5)
  	            		{
  	            			par3EntityPlayer.addChatMessage(par1ItemStack.getDisplayName() + "!");
@@ -571,7 +591,7 @@ public class ItemZanpakuto extends Item
   	            		
   	            		if(props.getZTex() == 0)
   	            		{
-  	            			par3EntityPlayer.addChatMessage("Storm," + " " + par1ItemStack.getDisplayName() + "!");
+  	            			par3EntityPlayer.addChatMessage("Gale," + " " + par1ItemStack.getDisplayName() + "!");
   	            		}
   	            		if(props.getZTex() == 1)
   	            		{
@@ -584,6 +604,10 @@ public class ItemZanpakuto extends Item
   	            		if(props.getZTex() == 3)
   	            		{
   	            			par3EntityPlayer.addChatMessage("Sharpen your blade," + " " + par1ItemStack.getDisplayName() + "!");
+  	            		}
+  	            		if(props.getZTex() == 4)
+  	            		{
+  	            			par3EntityPlayer.addChatMessage("Reach to the heavens," + " " + par1ItemStack.getDisplayName() + "!");
   	            		}
   	            		if(props.getZTex() == 5)
   	            		{
@@ -620,6 +644,10 @@ public class ItemZanpakuto extends Item
    	            		{
    	            			par3EntityPlayer.addChatMessage("Intensify," + " " + par1ItemStack.getDisplayName() + "!");
    	            		}
+   	            		if(props.getZTex() == 4)
+  	            		{
+  	            			par3EntityPlayer.addChatMessage("Divine," + " " + par1ItemStack.getDisplayName() + "!");
+  	            		}
    	            		if(props.getZTex() == 5)
    	            		{
    	            			par3EntityPlayer.addChatMessage("Hey, listen!");
@@ -647,6 +675,10 @@ public class ItemZanpakuto extends Item
     	            		{
     	            			par3EntityPlayer.addChatMessage("Ensnare," + " " + par1ItemStack.getDisplayName() + "!");
     	            		}
+    	            		if(props.getZTex() == 4)
+      	            		{
+      	            			par3EntityPlayer.addChatMessage("Veil in darkness," + " " + par1ItemStack.getDisplayName() + "!");
+      	            		}
     	            		if(props.getZTex() == 5)
     	            		{
     	            			par3EntityPlayer.addChatMessage("I will show you the greatest nightmare!");
@@ -678,6 +710,10 @@ public class ItemZanpakuto extends Item
  	            		{
  	            			par3EntityPlayer.addChatMessage("Flash," + " " + par1ItemStack.getDisplayName() + "!");
  	            		}
+ 	            		if(props.getZTex() == 4)
+  	            		{
+  	            			par3EntityPlayer.addChatMessage("Flash across the sky," + " " + par1ItemStack.getDisplayName() + "!");
+  	            		}
  	            		if(props.getZTex() == 5)
  	            		{
  	            			par3EntityPlayer.addChatMessage("Accio " + par1ItemStack.getDisplayName() + "!");
@@ -704,6 +740,10 @@ public class ItemZanpakuto extends Item
   	            		if(props.getZTex() == 3)
   	            		{
   	            			par3EntityPlayer.addChatMessage("Embrace the twilight," + " " + par1ItemStack.getDisplayName() + "!");
+  	            		}
+  	            		if(props.getZTex() == 4)
+  	            		{
+  	            			par3EntityPlayer.addChatMessage("Shimmer," + " " + par1ItemStack.getDisplayName() + "!");
   	            		}
   	            		if(props.getZTex() == 5)
   	            		{
@@ -732,6 +772,10 @@ public class ItemZanpakuto extends Item
    	            		{
    	            			par3EntityPlayer.addChatMessage("Anchor's away," + " " + par1ItemStack.getDisplayName() + "!");
    	            		}
+   	            		if(props.getZTex() == 4)
+  	            		{
+  	            			par3EntityPlayer.addChatMessage("Swash and buckle," + " " + par1ItemStack.getDisplayName() + "!");
+  	            		}
    	            		if(props.getZTex() == 5)
    	            		{
    	            			par3EntityPlayer.addChatMessage("Swim," + " " + par1ItemStack.getDisplayName() + "!");
@@ -763,6 +807,10 @@ public class ItemZanpakuto extends Item
     	            		{
     	            			par3EntityPlayer.addChatMessage("Devastate," + " " + par1ItemStack.getDisplayName() + "!");
     	            		}
+    	            		if(props.getZTex() == 4)
+      	            		{
+      	            			par3EntityPlayer.addChatMessage("Shake the Earth," + " " + par1ItemStack.getDisplayName() + "!");
+      	            		}
     	            		if(props.getZTex() == 5)
     	            		{
     	            			par3EntityPlayer.addChatMessage("Draw," + " " + par1ItemStack.getDisplayName() + "!");
@@ -804,12 +852,12 @@ public class ItemZanpakuto extends Item
     	}
     	else if(player.username.equalsIgnoreCase("thecodymaverick") )
     	{
-    		if( props.getZName().equals("Hi-Yari") && props.getZTex() != 6)
+    		if( props.getZName().equals("Hi-Yari") && props.getZTex() != 7)
     		{
-        		props.setType(11);
-        		props.setTexture(6);
+        		props.setType(1);
+        		props.setTexture(7);
     		}
-    		else if(!props.getZName().equals("Hi-Yari") && props.getZTex() == 6)
+    		else if(!props.getZName().equals("Hi-Yari") && props.getZTex() == 7)
         	{
         		props.setTexture(rand.nextInt(4));
         	}
