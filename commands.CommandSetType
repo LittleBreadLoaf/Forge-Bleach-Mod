@@ -86,7 +86,7 @@ public class CommandSetType extends CommandBase
             
             	 if (par2ArrayOfStr.length >= 2)
                  {
-                     var5 = parseIntBounded(par1ICommandSender, par2ArrayOfStr[1], 0, 3);
+                     var5 = parseIntBounded(par1ICommandSender, par2ArrayOfStr[1], 0, 4);
                  }
          		
          		props.setTexture(var5);	
@@ -119,6 +119,6 @@ public class CommandSetType extends CommandBase
 	@Override
 	public String getCommandUsage(ICommandSender icommandsender) 
 	{
-		return "/settype <type> [texture 0-3]";
+		return "/settype <type> [texture 0-4]";
 	}
 }
