@@ -328,6 +328,16 @@ public class ShikaiWater extends Item
         return false;
     }
     
- 
+    public void onUpdate(ItemStack var1, World var2, Entity var3, int var4, boolean var5)
+    {
+    	EntityPlayer var6 = (EntityPlayer)var3;
+    	if(var6.getCurrentEquippedItem() == var1)
+    	{
+    		if(var6.isInWater())
+    		{
+    			var6.moveFlying(var6.moveStrafing, var6.moveForward, 0.05F);
+    		}
+    	}
+    }
 
 }
