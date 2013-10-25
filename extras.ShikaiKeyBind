@@ -58,7 +58,6 @@ public class ShikaiKeyBind extends KeyHandler
              	   {
              		  props.syncSwords();
              		  heldItem.itemID = Items.zanpakuto.itemID;
-             		  System.out.println("Held Item Correct");
                      
              	   }
                 }
