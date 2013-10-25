@@ -4,8 +4,10 @@ import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
 
+import littlebreadloaf.armor.Armor;
 import littlebreadloaf.events.ExtendedPlayer;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.INetworkManager;
 import net.minecraft.network.packet.Packet250CustomPayload;
 import cpw.mods.fml.common.network.IPacketHandler;
@@ -27,6 +29,15 @@ public class PacketHandler implements IPacketHandler
 		{
 			handleDeactivating(packet, player);
 		}
+		else if(packet.channel.equals("Mask"))
+		{
+			handleMask(packet, player);
+		}
+		
+		else if(packet.channel.equals("Flash"))
+		{
+			handleFlashPacket(packet, player);
+		}
 	
 		
 		
@@ -38,12 +49,44 @@ public class PacketHandler implements IPacketHandler
 
 	
 
+	private void handleFlashPacket(Packet250CustomPayload packet, Player player) 
+	{
+		DataInputStream inputStream = new DataInputStream(new ByteArrayInputStream(packet.data));
+
+		ExtendedPlayer props = ((ExtendedPlayer)((EntityPlayer) player).getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME));
+		
+		try
+		{
+			props.decideWhatToDo(inputStream.readByte());
+		} catch (IOException e) {
+			e.printStackTrace();
+			return;
+		}
+	}
+
+	private void handleMask(Packet250CustomPayload packet, Player player) 
+	{
+		DataInputStream inputStream = new DataInputStream(new ByteArrayInputStream(packet.data));
+
+		EntityPlayer thePlayer = (EntityPlayer)player;
+        ExtendedPlayer props = (ExtendedPlayer) thePlayer.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME);
+		try 
+		{
+			
+			props.putOnMask(inputStream.readInt(), inputStream.readInt());
+			
+		} catch (IOException e){
+			e.printStackTrace();
+		}
+		
+	}
+
 	private void handleDeactivating(Packet250CustomPayload packet, Player player) 
 	{
 		DataInputStream inputStream = new DataInputStream(new ByteArrayInputStream(packet.data));
 
 		ExtendedPlayer props = ((ExtendedPlayer)((EntityPlayer) player).getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME));
-		System.out.println("Packet Recieved");
+
 		try 
 		{
 			props.deactivateShikai(inputStream.readInt());
@@ -74,6 +117,8 @@ public class PacketHandler implements IPacketHandler
 			props.setPoints(8, inputStream.readInt());
 			props.setPoints(9, inputStream.readInt());
 			props.setName(inputStream.readUTF());
+			props.setMask(inputStream.readInt());
+			props.setLines(inputStream.readInt());
 		} catch (IOException e) {
 			e.printStackTrace();
 			return;
