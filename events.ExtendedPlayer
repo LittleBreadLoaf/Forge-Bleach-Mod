@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.util.Random;
 
+import littlebreadloaf.armor.Armor;
 import littlebreadloaf.items.Items;
 import littlebreadloaf.libraries.BleachModInfo;
 import net.minecraft.client.entity.EntityClientPlayerMP;
@@ -44,6 +45,13 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 	private int ZTex = 5;
 	private String ZName = "";
 	
+	private int Mask;
+	private int MaskLines = rand.nextInt(3);
+	
+	private float MaskTime;
+	private int MaskTimeCap;
+	private int MaskXP;
+	
 	public ExtendedPlayer(EntityPlayer player)
 	{
 		this.player = player;
@@ -69,6 +77,9 @@ public class ExtendedPlayer implements IExtendedEntityProperties
         nbt.setInteger("ZType", this.ZType);
         nbt.setInteger("ZTex", this.ZTex);
         nbt.setString("ZName", this.ZName);
+        
+        nbt.setInteger("Mask", this.Mask);
+        nbt.setInteger("MaskLines", this.MaskLines);
 	}
 	
 	@Override
@@ -90,6 +101,9 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 		this.ZType = nbt.getInteger("ZType");
 		this.ZTex = nbt.getInteger("ZTex");
 		this.ZName = nbt.getString("ZName");
+		
+		this.Mask = nbt.getInteger("Mask");
+		this.MaskLines = nbt.getInteger("MaskLines");
 	}
 	
 	@Override
@@ -100,7 +114,7 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 	
 	public final void syncExtendedProperties()
 	{
-		ByteArrayOutputStream bos = new ByteArrayOutputStream(8);
+		ByteArrayOutputStream bos = new ByteArrayOutputStream(56);
 		DataOutputStream outputStream = new DataOutputStream(bos);
 		
 		try
@@ -117,6 +131,8 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 			outputStream.writeInt(this.Dark);
 			outputStream.writeInt(this.ZTotal);
 			outputStream.writeUTF(this.ZName);
+			outputStream.writeInt(this.Mask);
+			outputStream.writeInt(this.MaskLines);
 		} catch(Exception ex){
 			ex.printStackTrace();
 		}
@@ -627,12 +643,150 @@ public class ExtendedPlayer implements IExtendedEntityProperties
 			player1.sendQueue.addToSendQueue(packet);
 		}
 	}
+
+	public void movePlayer() 
+	{
+		if(player.onGround)
+		{
+			player.moveEntity(10*Math.cos(-player.rotationPitch * (Math.PI / 180F))*Math.sin(-player.rotationYaw * (Math.PI / 180F)), 10*Math.sin(-player.rotationPitch * (Math.PI / 180F)), 10*Math.cos(-player.rotationPitch * (Math.PI / 180F))*Math.cos(-player.rotationYaw * (Math.PI / 180F)));
+            ExtendedPlayer props = (ExtendedPlayer) player.getExtendedProperties(ExtendedPlayer.EXT_PROP_NAME);
+			props.consumeEnergy(5);
+	    	
+		}
+		
+	}
 	
 	
 	
 	
+	public int getMask()
+	{
+		return this.Mask;
+	}
+	public int getLines()
+	{
+		return this.MaskLines;
+	}
+	public void randomMask()
+	{
+		this.Mask = rand.nextInt(4);
+		this.syncExtendedProperties();
+	}
+	public void randomLines() 
+	{
+		this.MaskLines = rand.nextInt(3);
+		this.syncExtendedProperties();
+		
+	}
+	public void setLines(int var1)
+	{
+		this.MaskLines = var1;
+		this.syncExtendedProperties();
+	}
+	public void setMask(int var1)
+	{
+		this.Mask = var1;
+		this.syncExtendedProperties();
+	}
+
+	public void Hollowfy() 
+	{
+		PacketDispatcher.sendPacketToPlayer(MaskPacket.getPacket(this.Mask, this.MaskLines), (Player)player);
+	}
 	
+	public void putOnMask(int mask, int line)
+	{
+		ItemStack HollowMask;
+		
+		if(mask == 0)
+		{
+			if(line == 0)
+			{
+		   		HollowMask = new ItemStack(Armor.PlayerMask10, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+			else if(line == 1)
+			{
+		   		 HollowMask = new ItemStack(Armor.PlayerMask11, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+			else if(line == 2)
+			{
+		   		 HollowMask = new ItemStack(Armor.PlayerMask12, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+		}
+		else if(mask == 1)
+		{
+			if(line == 0)
+			{
+		   		 HollowMask = new ItemStack(Armor.PlayerMask20, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+			else if(line == 1)
+			{
+		   		 HollowMask = new ItemStack(Armor.PlayerMask21, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+			else if(line == 2)
+			{
+		   		 HollowMask = new ItemStack(Armor.PlayerMask22, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+		}
+		else if(mask == 2)
+		{
+			if(line == 0)
+			{
+		   		 HollowMask = new ItemStack(Armor.PlayerMask30, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+			else if(line == 1)
+			{
+		   		 HollowMask = new ItemStack(Armor.PlayerMask31, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+			else if(line == 2)
+			{
+		   		 HollowMask = new ItemStack(Armor.PlayerMask32, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+		}
+		else if(mask == 3)
+		{
+			if(line == 0)
+			{
+		   		 HollowMask = new ItemStack(Armor.PlayerMask40, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+			else if(line == 1)
+			{
+		   		 HollowMask = new ItemStack(Armor.PlayerMask41, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+			else if(line == 2)
+			{
+		   		 HollowMask = new ItemStack(Armor.PlayerMask42, 1);
+		   		player.setCurrentItemOrArmor(4, HollowMask);
+			}
+		}
+	}
+
+
 	
+	public void decideWhatToDo(byte readByte) 
+	{
+		if(readByte == 1)
+		{
+			this.movePlayer();
+		}
+		else if(readByte == 0)
+		{
+			this.Hollowfy();
+		}
+		
+	}
+
 	
 	
 
