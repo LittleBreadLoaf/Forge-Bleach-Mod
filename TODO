@@ -1,13 +1,14 @@
 KEY:
-[*] : Andrew's currently working on this
-[&] : Michael's currently working on this
+*[] : Andrew's currently working on this
+&[] : Michael's currently working on this
 
-[-] : Additional info for above task
-[+] : ??
+[X] : Finished
+
+- : Additional info for above task
 _________________________________________________________________________________________________________________-
 TASKS:
 
-[]  Quincy Mob 
+&[]  Quincy Mob 
 -   Spawns in Villages
 -   Trade soul cloth with them for items
 +   Lapis, Lapis Blocks, Quincy Pendants, Tier 2 Bow (Soul Cloth and bow to upgrade), Seeleschneiders, etc.
@@ -31,5 +32,6 @@ TASKS:
 []  Player Mask Abilities/ other things
 *[]  Change Zanpakuto and Armor to make PvP more interesting
 *[]  Make each hollow give different points, 3 total in different categories
-[]  Book that is crafted with writing already in it, about which hollow gives which points
+&[]  Book that is crafted with writing already in it, about which hollow gives which points
+
 
