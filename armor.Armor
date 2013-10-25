@@ -1,11 +1,24 @@
 package littlebreadloaf.armor;
 
 import littlebreadloaf.BleachMod;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask10;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask11;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask12;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask20;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask21;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask22;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask30;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask31;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask32;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask40;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask41;
+import littlebreadloaf.armor.pmasks.ItemPlayerMask42;
 import littlebreadloaf.libraries.Ids;
 import littlebreadloaf.libraries.Names;
 import littlebreadloaf.libraries.Tools;
 import littlebreadloaf.proxies.CommonProxy;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.src.ModLoader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -21,6 +34,19 @@ public class Armor
 	public static Item GolemHelmet;
 	public static Item WaspHelmet;
 	public static Item StalkerHelmet;
+	
+	public static Item PlayerMask10;
+	public static Item PlayerMask11;
+	public static Item PlayerMask12;
+	public static Item PlayerMask20;
+	public static Item PlayerMask21;
+	public static Item PlayerMask22;
+	public static Item PlayerMask30;
+	public static Item PlayerMask31;
+	public static Item PlayerMask32;
+	public static Item PlayerMask40;
+	public static Item PlayerMask41;
+	public static Item PlayerMask42;
 	
 	public static Item ShiniRobe;
 	public static Item ShiniPants;
@@ -40,6 +66,19 @@ public class Armor
 		GolemHelmet = new ItemGolemHelmet(Ids.golemHelmetID, Tools.MASK, BleachMod.proxy.addArmor("golem_helmet"), 0);
 		WaspHelmet = new ItemWaspHelmet(Ids.waspHelmetID, Tools.MASK, BleachMod.proxy.addArmor("wasp_helmet"), 0);
 		StalkerHelmet = new ItemStalkerHelmet(Ids.stalkerHelmetID, Tools.MASK, BleachMod.proxy.addArmor("stalker_helmet"), 0);
+		
+		PlayerMask10 = new ItemPlayerMask10(Ids.playerMask10ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask10"), 0);
+		PlayerMask11 = new ItemPlayerMask11(Ids.playerMask11ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask11"), 0);
+		PlayerMask12 = new ItemPlayerMask12(Ids.playerMask12ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask12"), 0);
+		PlayerMask20 = new ItemPlayerMask20(Ids.playerMask20ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask20"), 0);
+		PlayerMask21 = new ItemPlayerMask21(Ids.playerMask21ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask21"), 0);
+		PlayerMask22 = new ItemPlayerMask22(Ids.playerMask22ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask22"), 0);
+		PlayerMask30 = new ItemPlayerMask30(Ids.playerMask30ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask30"), 0);
+		PlayerMask31 = new ItemPlayerMask31(Ids.playerMask31ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask31"), 0);
+		PlayerMask32 = new ItemPlayerMask32(Ids.playerMask32ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask32"), 0);
+		PlayerMask40 = new ItemPlayerMask40(Ids.playerMask40ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask40"), 0);
+		PlayerMask41 = new ItemPlayerMask41(Ids.playerMask41ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask41"), 0);
+		PlayerMask42 = new ItemPlayerMask42(Ids.playerMask42ID, Tools.MASK, BleachMod.proxy.addArmor("player_mask42"), 0);
 		
 		ShiniRobe = new ItemShiniRobe(Ids.shinirobeID, Tools.SOULS, BleachMod.proxy.addArmor("shinigami"), 1);
 		ShiniPants = new ItemShiniPants(Ids.shinipantsID, Tools.SOULS, BleachMod.proxy.addArmor("shinigami"), 2);
@@ -68,6 +107,21 @@ public class Armor
 		LanguageRegistry.addName(QuincyRobe, Names.QuincyChest_Name);
 		LanguageRegistry.addName(QuincyPants, Names.QuincyPants_Name);
 		LanguageRegistry.addName(QuincyShoes, Names.QuincyShoes_Name);
+		
+		
+		LanguageRegistry.addName(PlayerMask10, Names.PlayerMask10_Name);
+		LanguageRegistry.addName(PlayerMask11, Names.PlayerMask11_Name);
+		LanguageRegistry.addName(PlayerMask12, Names.PlayerMask12_Name);
+		LanguageRegistry.addName(PlayerMask20, Names.PlayerMask20_Name);
+		LanguageRegistry.addName(PlayerMask21, Names.PlayerMask21_Name);
+		LanguageRegistry.addName(PlayerMask22, Names.PlayerMask22_Name);
+		LanguageRegistry.addName(PlayerMask30, Names.PlayerMask30_Name);
+		LanguageRegistry.addName(PlayerMask31, Names.PlayerMask31_Name);
+		LanguageRegistry.addName(PlayerMask32, Names.PlayerMask32_Name);
+		LanguageRegistry.addName(PlayerMask40, Names.PlayerMask40_Name);
+		LanguageRegistry.addName(PlayerMask41, Names.PlayerMask41_Name);
+		LanguageRegistry.addName(PlayerMask42, Names.PlayerMask42_Name);
+		
 		
 	}
 
