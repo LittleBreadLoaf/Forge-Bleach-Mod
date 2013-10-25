@@ -34,6 +34,8 @@ public class ConfigHandler
 		
 		Ids.paperwallID = config.get(config.CATEGORY_BLOCK, "Paper Wall ID", Ids.paperwallID_Default).getInt();
 		
+		Ids.paperdoorID = config.get(config.CATEGORY_BLOCK, "Paper Door ID", Ids.paperdoorID_Default).getInt();
+		
 		
 		
 		
@@ -95,6 +97,20 @@ public class ConfigHandler
 		Ids.quincyshoesID = config.get(config.CATEGORY_ITEM, "Quincy Shoes ID", Ids.quincyshoesID_Default).getInt();
 		
 		Ids.seeleschneiderID = config.get(config.CATEGORY_ITEM, "Seeleschneider ID", Ids.seeleschneiderID_Default).getInt();
+		
+		Ids.playerMask10ID = config.get(config.CATEGORY_ITEM, "Player Mask 1-1 ID", Ids.playerMask10ID_Default).getInt();
+		Ids.playerMask11ID = config.get(config.CATEGORY_ITEM, "Player Mask 1-2 ID", Ids.playerMask11ID_Default).getInt();
+		Ids.playerMask12ID = config.get(config.CATEGORY_ITEM, "Player Mask 1-3 ID", Ids.playerMask12ID_Default).getInt();
+		Ids.playerMask20ID = config.get(config.CATEGORY_ITEM, "Player Mask 2-1 ID", Ids.playerMask20ID_Default).getInt();
+		Ids.playerMask21ID = config.get(config.CATEGORY_ITEM, "Player Mask 2-2 ID", Ids.playerMask21ID_Default).getInt();
+		Ids.playerMask22ID = config.get(config.CATEGORY_ITEM, "Player Mask 2-3 ID", Ids.playerMask22ID_Default).getInt();
+		Ids.playerMask30ID = config.get(config.CATEGORY_ITEM, "Player Mask 3-1 ID", Ids.playerMask30ID_Default).getInt();
+		Ids.playerMask31ID = config.get(config.CATEGORY_ITEM, "Player Mask 3-2 ID", Ids.playerMask31ID_Default).getInt();
+		Ids.playerMask32ID = config.get(config.CATEGORY_ITEM, "Player Mask 3-3 ID", Ids.playerMask32ID_Default).getInt();
+		Ids.playerMask40ID = config.get(config.CATEGORY_ITEM, "Player Mask 4-1 ID", Ids.playerMask40ID_Default).getInt();
+		Ids.playerMask41ID = config.get(config.CATEGORY_ITEM, "Player Mask 4-2 ID", Ids.playerMask41ID_Default).getInt();
+		Ids.playerMask42ID = config.get(config.CATEGORY_ITEM, "Player Mask 4-3 ID", Ids.playerMask42ID_Default).getInt();
+		
 		
 		
 		
