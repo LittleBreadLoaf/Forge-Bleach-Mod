@@ -115,6 +115,37 @@ public class Names
 	public static final String[] Seeleschneider_UnlocalizedName = {"seele", "seele2"};
 	public static final String[] Seeleschneider_Name = {"Seeleschneider", "Seeleschneider"};
 	
+	public static final String PaperDoor_Name = "Paper Door";
+	public static final String PaperDoor_UnlocalizedName = "paper_door";
+	
+	public static final String PlayerMask10_Name = "Hollow Mask";
+	public static final String PlayerMask10_UnlocalizedName = "playermask1";
+	public static final String PlayerMask11_Name = "Hollow Mask";
+	public static final String PlayerMask11_UnlocalizedName = "playermask1";
+	public static final String PlayerMask12_Name = "Hollow Mask";
+	public static final String PlayerMask12_UnlocalizedName = "playermask1";
+	public static final String PlayerMask20_Name = "Hollow Mask";
+	public static final String PlayerMask20_UnlocalizedName = "playermask2";
+	public static final String PlayerMask21_Name = "Hollow Mask";
+	public static final String PlayerMask21_UnlocalizedName = "playermask2";
+	public static final String PlayerMask22_Name = "Hollow Mask";
+	public static final String PlayerMask22_UnlocalizedName = "playermask2";
+	public static final String PlayerMask30_Name = "Hollow Mask";
+	public static final String PlayerMask30_UnlocalizedName = "playermask3";
+	public static final String PlayerMask31_Name = "Hollow Mask";
+	public static final String PlayerMask31_UnlocalizedName = "playermask3";
+	public static final String PlayerMask32_Name = "Hollow Mask";
+	public static final String PlayerMask32_UnlocalizedName = "playermask3";
+	public static final String PlayerMask40_Name = "Hollow Mask";
+	public static final String PlayerMask40_UnlocalizedName = "playermask4";
+	public static final String PlayerMask41_Name = "Hollow Mask";
+	public static final String PlayerMask41_UnlocalizedName = "playermask4";
+	public static final String PlayerMask42_Name = "Hollow Mask";
+	public static final String PlayerMask42_UnlocalizedName = "playermask4";
+	
+
+
+	
 	
 	
 	public static final String[] ShikaiFire_UnlocalizedName = {"shikai_fire1", "shikai_fire2", "shikai_fire3", "shikai_fire4", "shikai_fire5", "vox_populi"};
