@@ -40,6 +40,9 @@ public class Ids
 	public static int paperwallID;
 	public static final int paperwallID_Default = 2191;
 	
+	public static int paperdoorID;
+	public static final int paperdoorID_Default = 2192;
+	
 	
 	
 	
@@ -121,6 +124,32 @@ public class Ids
 	
 	public static int seeleschneiderID;
 	public static final int seeleschneiderID_Default = 20203;
+	
+	public static int playerMask10ID;
+	public static final int playerMask10ID_Default = 20204;
+	public static int playerMask11ID;
+	public static final int playerMask11ID_Default = 20205;
+	public static int playerMask12ID;
+	public static final int playerMask12ID_Default = 20206;
+	public static int playerMask20ID;
+	public static final int playerMask20ID_Default = 20207;
+	public static int playerMask21ID;
+	public static final int playerMask21ID_Default = 20208;
+	public static int playerMask22ID;
+	public static final int playerMask22ID_Default = 20209;
+	public static int playerMask30ID;
+	public static final int playerMask30ID_Default = 20210;
+	public static int playerMask31ID;
+	public static final int playerMask31ID_Default = 20211;
+	public static int playerMask32ID;
+	public static final int playerMask32ID_Default = 20212;
+	public static int playerMask40ID;
+	public static final int playerMask40ID_Default = 20213;
+	public static int playerMask41ID;
+	public static final int playerMask41ID_Default = 20214;
+	public static int playerMask42ID;
+	public static final int playerMask42ID_Default = 20215;
+
 	
 
 	public static int customSpawnerID;
